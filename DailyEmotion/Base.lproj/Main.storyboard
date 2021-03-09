@@ -165,7 +165,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕하슈 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MdX-fv-14e">
-                                                    <rect key="frame" x="40" y="35" width="63.333333333333343" height="20"/>
+                                                    <rect key="frame" x="40" y="35" width="106" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -177,7 +177,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021.03.08 23:02" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LD8-Ip-0xj">
-                                                    <rect key="frame" x="28.666666666666671" y="63" width="86" height="12"/>
+                                                    <rect key="frame" x="50" y="63" width="86" height="12"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="12" id="Ohk-0h-IOY"/>
                                                     </constraints>
@@ -192,6 +192,7 @@
                                                 <constraint firstItem="LD8-Ip-0xj" firstAttribute="top" secondItem="MdX-fv-14e" secondAttribute="bottom" constant="8" id="E8L-1f-BfQ"/>
                                                 <constraint firstItem="bd3-wq-Dxv" firstAttribute="leading" secondItem="28X-1K-MxT" secondAttribute="leading" constant="10" id="Ff2-rZ-2Wt"/>
                                                 <constraint firstItem="bd3-wq-Dxv" firstAttribute="centerY" secondItem="28X-1K-MxT" secondAttribute="centerY" id="LRz-Eu-A1Q"/>
+                                                <constraint firstItem="LD8-Ip-0xj" firstAttribute="leading" secondItem="28X-1K-MxT" secondAttribute="leading" constant="50" id="NXO-Uk-UnB"/>
                                                 <constraint firstAttribute="bottom" secondItem="LD8-Ip-0xj" secondAttribute="bottom" constant="15" id="d31-YA-n2H"/>
                                                 <constraint firstItem="MdX-fv-14e" firstAttribute="centerY" secondItem="28X-1K-MxT" secondAttribute="centerY" id="jAd-9e-i6M"/>
                                             </constraints>
@@ -201,10 +202,11 @@
                                             <outlet property="dateLabel" destination="LD8-Ip-0xj" id="qLf-XH-MyF"/>
                                             <outlet property="descriptionLabel" destination="MdX-fv-14e" id="A44-CS-Z7q"/>
                                             <outlet property="myEmotion" destination="bd3-wq-Dxv" id="HGU-Ho-Nw4"/>
+                                            <segue destination="tTS-ik-DKt" kind="show" id="wHi-b1-Yqw"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EmotionListHeaderView" id="fhh-sk-zVS" customClass="EmotionListHeaderView">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EmotionListHeaderView" id="fhh-sk-zVS" customClass="EmotionListHeaderView" customModule="DailyEmotion" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="390" height="50"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
@@ -220,7 +222,7 @@
                                         <constraint firstItem="cRv-vP-aFV" firstAttribute="centerY" secondItem="fhh-sk-zVS" secondAttribute="centerY" id="cyH-qe-Yze"/>
                                     </constraints>
                                     <connections>
-                                        <outlet property="sectionTitleLabel" destination="cRv-vP-aFV" id="qFU-9C-xFF"/>
+                                        <outlet property="sectionTitleLabel" destination="cRv-vP-aFV" id="Acq-MI-vnr"/>
                                     </connections>
                                 </collectionReusableView>
                                 <connections>
@@ -272,30 +274,84 @@
             <point key="canvasLocation" x="-678.46153846153845" y="903.55450236966817"/>
         </scene>
         <!--View Controller-->
+        <scene sceneID="OWh-y3-TYg">
+            <objects>
+                <viewController id="tTS-ik-DKt" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5CY-8U-cOk">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="p61-eL-foX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="W9j-uC-sp2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dO2-64-zcB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="351" y="904"/>
+        </scene>
+        <!--Add View Controller-->
         <scene sceneID="dY7-CV-Xbq">
             <objects>
-                <viewController id="Mba-Dq-wg0" sceneMemberID="viewController">
+                <viewController id="Mba-Dq-wg0" customClass="AddViewController" customModule="DailyEmotion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xhv-0g-W2k">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="당신의 오늘 기분은 어떠신가요? 누구에게도 털어 놓지 못하는 이야기가 있나요?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fxg-sg-gLg">
-                                <rect key="frame" x="16" y="93" width="358" height="203"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fxg-sg-gLg">
+                                <rect key="frame" x="16" y="186" width="358" height="179"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ceg-gS-AV1">
+                                <rect key="frame" x="334" y="110" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="행복">
+                                    <color key="titleColor" red="0.91980725529999996" green="0.132408269" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRa-M7-BPl">
+                                <rect key="frame" x="31" y="110" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="우울">
+                                    <color key="titleColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K55-kS-Fac">
+                                <rect key="frame" x="107" y="110" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="슬픔">
+                                    <color key="titleColor" systemColor="systemTealColor"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d19-Je-1jE">
+                                <rect key="frame" x="167" y="110" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="보통">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVz-st-Nwq">
+                                <rect key="frame" x="257" y="110" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="기쁨">
+                                    <color key="titleColor" systemColor="systemGreenColor"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="03f-QP-oz2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Crn-K0-vZA"/>
+                    <connections>
+                        <outlet property="addTextView" destination="fxg-sg-gLg" id="AYx-JR-Nbn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Chk-nz-iv3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="352" y="1641"/>
+            <point key="canvasLocation" x="350.76923076923077" y="1640.7582938388625"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4Ze-pI-OdR">
@@ -322,11 +378,20 @@
     <resources>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

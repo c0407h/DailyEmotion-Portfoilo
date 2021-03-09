@@ -15,6 +15,7 @@
 		57404B7C25F65084000A5EFF /* EmotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57404B7B25F65084000A5EFF /* EmotionViewController.swift */; };
 		57404B8725F66589000A5EFF /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57404B8625F66589000A5EFF /* Emotion.swift */; };
 		57404B8A25F66593000A5EFF /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57404B8925F66593000A5EFF /* Storage.swift */; };
+		57F0139625F7275D0078E44C /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F0139525F7275D0078E44C /* AddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		57404B7B25F65084000A5EFF /* EmotionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionViewController.swift; sourceTree = "<group>"; };
 		57404B8625F66589000A5EFF /* Emotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
 		57404B8925F66593000A5EFF /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		57F0139525F7275D0078E44C /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				57404B6625F64A57000A5EFF /* AppDelegate.swift */,
 				57404B6825F64A57000A5EFF /* SceneDelegate.swift */,
 				57404B6C25F64A57000A5EFF /* Main.storyboard */,
+				57F0139525F7275D0078E44C /* AddViewController.swift */,
 				57404B7B25F65084000A5EFF /* EmotionViewController.swift */,
 				57404B8625F66589000A5EFF /* Emotion.swift */,
 				57404B8925F66593000A5EFF /* Storage.swift */,
@@ -145,6 +148,7 @@
 			files = (
 				57404B7C25F65084000A5EFF /* EmotionViewController.swift in Sources */,
 				57404B8725F66589000A5EFF /* Emotion.swift in Sources */,
+				57F0139625F7275D0078E44C /* AddViewController.swift in Sources */,
 				57404B6725F64A57000A5EFF /* AppDelegate.swift in Sources */,
 				57404B6925F64A57000A5EFF /* SceneDelegate.swift in Sources */,
 				57404B8A25F66593000A5EFF /* Storage.swift in Sources */,

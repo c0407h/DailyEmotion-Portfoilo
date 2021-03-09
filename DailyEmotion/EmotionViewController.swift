@@ -17,15 +17,11 @@ class EmotionViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // TODO: 키보드 디텍션
-        
-        
-        // TODO: 데이터 불러오기
-        
+  
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
-
-    // TODO: BG 탭했을때, 키보드 내려오게 하기
+    
 }
 
 extension EmotionViewController {
@@ -39,12 +35,12 @@ extension EmotionViewController {
 extension EmotionViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         // TODO: 섹션 몇개
-        return 1
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // TODO: 섹션별 아이템 몇개
-        return 1
+        return 5
     }
     
     

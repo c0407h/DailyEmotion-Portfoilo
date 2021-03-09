@@ -81,5 +81,7 @@ class EmotionViewModel {
     var numOfSection: Int {
         return Section.allCases.count
     }
-
+    func loadTasks() {
+        manager.retrieveEmotion()
+    }
 }
