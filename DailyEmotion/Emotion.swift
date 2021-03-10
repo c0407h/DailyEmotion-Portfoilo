@@ -16,6 +16,7 @@ struct Emotion: Codable, Equatable {
     var isUsually: Bool
     var isPleasure: Bool
     var isHappy: Bool
+    var isToday: String
     
     
     mutating func update(isDone: Bool, detail: String, isToday: Date) {
@@ -27,6 +28,8 @@ struct Emotion: Codable, Equatable {
         // TODO: 동등 조건 추가
         return true
     }
+    
+
 }
 
 class EmotionManager {
@@ -37,20 +40,19 @@ class EmotionManager {
     
     var emotions: [Emotion] = []
     
-    func stringFromDate(_ date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-DD HH:mm EEE"
-        return formatter.string(from: date)
-    }
+
     
-    func createEmotion(detail: String, isBad: Bool, isSad: Bool, isUsually: Bool, isPleasure: Bool, isHappy: Bool) -> Emotion {
+    func createEmotion(detail: String, isBad: Bool, isSad: Bool, isUsually: Bool, isPleasure: Bool, isHappy: Bool, isToday: String) -> Emotion {
         //TODO: create로직 추가
         let nextId = EmotionManager.lastId + 1
         EmotionManager.lastId = nextId
         
-
-        
-        return Emotion(id: nextId, isDone: false, detail: detail, isBad: isBad, isSad: isSad, isUsually: isUsually, isPleasure: isPleasure, isHappy: isHappy)
+        let today = NSDate()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let isTodayDate = dateFormatter.string(from: today as Date)
+                
+        return Emotion(id: nextId, isDone: false, detail: detail, isBad: isBad, isSad: isSad, isUsually: isUsually, isPleasure: isPleasure, isHappy: isHappy, isToday: isTodayDate)
 
     }
     
@@ -71,10 +73,7 @@ class EmotionManager {
     }
 }
 
-
 class EmotionViewModel {
-
-
     enum Section: Int, CaseIterable {
         case today
         case before
@@ -86,26 +85,34 @@ class EmotionViewModel {
             }
         }
     }
+    
+    
     private let manager = EmotionManager.shared
     
     var emotions: [Emotion] {
         return manager.emotions
     }
     
-//    var todayEmotions: [Emotion] {
-//        return
-//    }
-//
-//    var beforeEmotions: [Emotion] {
-//        return
-//    }
+    var todayEmotions: [Emotion] {
+        let today = NSDate()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let isTodayDate = dateFormatter.string(from: today as Date)
+        
+        return emotions.filter { $0.isToday ==  isTodayDate }
+    }
+    var beforeEmotions: [Emotion] {
+        let today = NSDate()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let isTodayDate = dateFormatter.string(from: today as Date)
+        
+        return emotions.filter { $0.isToday !=  isTodayDate }
+    }
     
     func addEmotion(_ emotion: Emotion) {
         manager.addEmotion(emotion)
     }
-
-
-    
     
     var numOfSection: Int {
         return Section.allCases.count

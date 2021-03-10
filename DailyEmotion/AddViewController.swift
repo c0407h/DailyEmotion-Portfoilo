@@ -59,7 +59,7 @@ class AddViewController: UIViewController {
         let detail = addTextView.text!
         
         
-        let emotion = EmotionManager.shared.createEmotion(detail: detail, isBad: isBad.isSelected, isSad: isSad.isSelected, isUsually: isUsually.isSelected, isPleasure: isPleasure.isSelected, isHappy: isHappy.isSelected )
+        let emotion = EmotionManager.shared.createEmotion(detail: detail, isBad: isBad.isSelected, isSad: isSad.isSelected, isUsually: isUsually.isSelected, isPleasure: isPleasure.isSelected, isHappy: isHappy.isSelected, isToday: )
         
         if addTextView.text != "" {
             addTextView.text = ""
@@ -68,6 +68,7 @@ class AddViewController: UIViewController {
             isUsually.isSelected = false
             isPleasure.isSelected = false
             isHappy.isSelected = false
+            
             emotionistViewModel.addEmotion(emotion)
             _ = navigationController?.popViewController(animated: true)
         } else {
