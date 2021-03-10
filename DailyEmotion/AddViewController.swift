@@ -46,7 +46,7 @@ class AddViewController: UIViewController {
         isUsually.isSelected = !isUsually.isSelected
     }
     @IBAction func isPleasureButtonTapped(_ sender: Any) {
-        isPleasure.isSelected = !isBad.isSelected
+        isPleasure.isSelected = !isPleasure.isSelected
     }
     @IBAction func isHappyButtonTapped(_ sender: Any) {
         isHappy.isSelected = !isHappy.isSelected
@@ -75,7 +75,11 @@ class AddViewController: UIViewController {
             
             
             emotionistViewModel.addEmotion(emotion)
+            
+            
             _ = navigationController?.popViewController(animated: true)
+            
+            
         } else {
             print("아무것도없어요")
             let alert = UIAlertController(title: "등록 실패", message: "내용이 없습니다.", preferredStyle: UIAlertController.Style.alert)

@@ -11,12 +11,8 @@ import UIKit
 var emotionImage = ["🟦","🟪","⬛️","🟩","🟥"]
 
 class EmotionViewController: UIViewController{
-    
-
     @IBOutlet weak var collectionView: UICollectionView!
-    
-
-    
+        
     let emotionListViewModel = EmotionViewModel()
     
 
@@ -28,8 +24,9 @@ class EmotionViewController: UIViewController{
         self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
-    
-
+    override func viewDidAppear(_ animated: Bool) {
+        collectionView.reloadData()
+    }
     
     
 }
@@ -131,7 +128,7 @@ class EmotionListCell: UICollectionViewCell {
     func updateUI(emotion: Emotion) {
         // TODO: 셀 업데이트 하기
         descriptionLabel.text = emotion.detail
-        
+        dateLabel.text = emotion.isToday
     }
     
 
