@@ -11,9 +11,14 @@ struct Emotion: Codable, Equatable {
     let id: Int
     var isDone: Bool
     var detail: String
-    var isToday: Bool
+    var isBad: Bool
+    var isSad: Bool
+    var isUsually: Bool
+    var isPleasure: Bool
+    var isHappy: Bool
     
-    mutating func update(isDone: Bool, detail: String, isToday: Bool) {
+    
+    mutating func update(isDone: Bool, detail: String, isToday: Date) {
         // TODO: update 로직 추가
         
     }
@@ -32,11 +37,27 @@ class EmotionManager {
     
     var emotions: [Emotion] = []
     
-    func createEmotion(detail: String, isToday: Bool) -> Emotion {
-        //TODO: create로직 추가
-        return Emotion(id: 1, isDone: false, detail: "2", isToday: true)
+    func stringFromDate(_ date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-DD HH:mm EEE"
+        return formatter.string(from: date)
     }
     
+    func createEmotion(detail: String, isBad: Bool, isSad: Bool, isUsually: Bool, isPleasure: Bool, isHappy: Bool) -> Emotion {
+        //TODO: create로직 추가
+        let nextId = EmotionManager.lastId + 1
+        EmotionManager.lastId = nextId
+        
+
+        
+        return Emotion(id: nextId, isDone: false, detail: detail, isBad: isBad, isSad: isSad, isUsually: isUsually, isPleasure: isPleasure, isHappy: isHappy)
+
+    }
+    
+    func addEmotion(_ emotion: Emotion) {
+        emotions.append(emotion)
+        saveEmotion()
+    }
     
     func saveEmotion() {
         Storage.store(emotions, to: .documents, as: "emotions.json")
@@ -52,7 +73,8 @@ class EmotionManager {
 
 
 class EmotionViewModel {
-    
+
+
     enum Section: Int, CaseIterable {
         case today
         case before
@@ -70,13 +92,20 @@ class EmotionViewModel {
         return manager.emotions
     }
     
-    var todayEmotions: [Emotion] {
-        return emotions.filter { $0.isToday == true }
-    }
+//    var todayEmotions: [Emotion] {
+//        return
+//    }
+//
+//    var beforeEmotions: [Emotion] {
+//        return
+//    }
     
-    var beforeEmotions: [Emotion] {
-        return emotions.filter { $0.isToday == false }
+    func addEmotion(_ emotion: Emotion) {
+        manager.addEmotion(emotion)
     }
+
+
+    
     
     var numOfSection: Int {
         return Section.allCases.count

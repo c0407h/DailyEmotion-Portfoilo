@@ -7,19 +7,29 @@
 
 import UIKit
 
+
+var emotionImage = ["🟦","🟪","⬛️","🟩","🟥"]
+
 class EmotionViewController: UIViewController{
     
 
     @IBOutlet weak var collectionView: UICollectionView!
     
 
+    
+    let emotionListViewModel = EmotionViewModel()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        emotionListViewModel.loadTasks()
   
         self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    
+
     
     
 }
@@ -35,23 +45,35 @@ extension EmotionViewController {
 extension EmotionViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         // TODO: 섹션 몇개
-        return 2
+        return emotionListViewModel.numOfSection
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // TODO: 섹션별 아이템 몇개
-        return 5
+        if section == 0 {
+            return emotionListViewModel.todayEmotions.count
+        } else {
+            return emotionListViewModel.beforeEmotions.count
+        }
     }
     
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // TODO: 커스텀 셀
+        
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EmotionListCell", for: indexPath) as? EmotionListCell else {
             return UICollectionViewCell()
         }
-        return cell
+        var emotion: Emotion
+        if indexPath.section == 0 {
+            emotion = emotionListViewModel.todayEmotions[indexPath.item]
+        } else {
+            emotion = emotionListViewModel.beforeEmotions[indexPath.item]
+        }
+        cell.updateUI(emotion: emotion)
         
+        
+        // TODO: 커스텀 셀
         // TODO: todo 를 이용해서 updateUI
         // TODO: doneButtonHandler 작성
         // TODO: deleteButtonHandler 작성
@@ -81,7 +103,7 @@ extension EmotionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // TODO: 사이즈 계산하기
         let width: CGFloat = collectionView.bounds.width
-        let height: CGFloat = 50
+        let height: CGFloat = 30
         return CGSize(width: width, height: height)
     }
 }
@@ -92,6 +114,9 @@ class EmotionListCell: UICollectionViewCell {
     @IBOutlet weak var myEmotion: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -105,7 +130,8 @@ class EmotionListCell: UICollectionViewCell {
     
     func updateUI(emotion: Emotion) {
         // TODO: 셀 업데이트 하기
-
+        descriptionLabel.text = emotion.detail
+        
     }
     
 

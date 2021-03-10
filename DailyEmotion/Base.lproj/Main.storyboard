@@ -202,7 +202,7 @@
                                             <outlet property="dateLabel" destination="LD8-Ip-0xj" id="qLf-XH-MyF"/>
                                             <outlet property="descriptionLabel" destination="MdX-fv-14e" id="A44-CS-Z7q"/>
                                             <outlet property="myEmotion" destination="bd3-wq-Dxv" id="HGU-Ho-Nw4"/>
-                                            <segue destination="tTS-ik-DKt" kind="show" id="wHi-b1-Yqw"/>
+                                            <segue destination="tTS-ik-DKt" kind="show" identifier="sgDetail" id="wHi-b1-Yqw"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -241,7 +241,7 @@
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="plus" catalog="system"/>
                                         <connections>
-                                            <segue destination="Mba-Dq-wg0" kind="show" id="ZMl-Xw-nzc"/>
+                                            <segue destination="Mba-Dq-wg0" kind="show" identifier="sgAdd" id="ZMl-Xw-nzc"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -260,7 +260,7 @@
                     <navigationItem key="navigationItem" title="My Emotion" id="oul-5q-0Hs">
                         <barButtonItem key="leftBarButtonItem" title="settingItem" image="gearshape.fill" catalog="system" id="bS6-GQ-6cj">
                             <connections>
-                                <segue destination="rpU-dP-rHb" kind="show" id="A4E-Uh-hfB"/>
+                                <segue destination="rpU-dP-rHb" kind="show" identifier="sgSetting" id="A4E-Uh-hfB"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="편집" id="oh2-vg-e4c"/>
@@ -311,6 +311,9 @@
                                 <state key="normal" title="행복">
                                     <color key="titleColor" red="0.91980725529999996" green="0.132408269" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="isHappyButtonTapped:" destination="Mba-Dq-wg0" eventType="touchUpInside" id="SXi-56-YcH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRa-M7-BPl">
                                 <rect key="frame" x="31" y="110" width="30" height="30"/>
@@ -318,13 +321,19 @@
                                 <state key="normal" title="우울">
                                     <color key="titleColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="isBadButtonTapped:" destination="Mba-Dq-wg0" eventType="touchUpInside" id="DuQ-ia-M9J"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K55-kS-Fac">
                                 <rect key="frame" x="107" y="110" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="슬픔">
-                                    <color key="titleColor" systemColor="systemTealColor"/>
+                                    <color key="titleColor" systemColor="systemPurpleColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="isSadButtonTapped:" destination="Mba-Dq-wg0" eventType="touchUpInside" id="AP2-jo-sdG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d19-Je-1jE">
                                 <rect key="frame" x="167" y="110" width="30" height="30"/>
@@ -332,6 +341,9 @@
                                 <state key="normal" title="보통">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="isUsuallyButtonTapped:" destination="Mba-Dq-wg0" eventType="touchUpInside" id="YhC-yG-ThP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVz-st-Nwq">
                                 <rect key="frame" x="257" y="110" width="30" height="30"/>
@@ -339,6 +351,21 @@
                                 <state key="normal" title="기쁨">
                                     <color key="titleColor" systemColor="systemGreenColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="isPleasureButtonTapped:" destination="Mba-Dq-wg0" eventType="touchUpInside" id="ejm-6G-VOv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oCA-Aa-dOk">
+                                <rect key="frame" x="334" y="393" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                <state key="normal" title="등록">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addBtn:" destination="Mba-Dq-wg0" eventType="touchUpInside" id="A1t-k3-M8e"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="03f-QP-oz2"/>
@@ -347,6 +374,11 @@
                     <navigationItem key="navigationItem" id="Crn-K0-vZA"/>
                     <connections>
                         <outlet property="addTextView" destination="fxg-sg-gLg" id="AYx-JR-Nbn"/>
+                        <outlet property="isBad" destination="kRa-M7-BPl" id="4RO-J0-6fr"/>
+                        <outlet property="isHappy" destination="ceg-gS-AV1" id="GdI-0p-r4D"/>
+                        <outlet property="isPleasure" destination="uVz-st-Nwq" id="vgM-Pi-Wjc"/>
+                        <outlet property="isSad" destination="K55-kS-Fac" id="IKl-vW-j3o"/>
+                        <outlet property="isUsually" destination="d19-Je-1jE" id="lZk-0z-N71"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Chk-nz-iv3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -390,8 +422,8 @@
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
