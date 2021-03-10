@@ -58,8 +58,12 @@ class AddViewController: UIViewController {
 //              detail.isEmpty == false else { return }
         let detail = addTextView.text!
         
+        let today = NSDate()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let isTodayDate = dateFormatter.string(from: today as Date)
         
-        let emotion = EmotionManager.shared.createEmotion(detail: detail, isBad: isBad.isSelected, isSad: isSad.isSelected, isUsually: isUsually.isSelected, isPleasure: isPleasure.isSelected, isHappy: isHappy.isSelected, isToday: )
+        let emotion = EmotionManager.shared.createEmotion(detail: detail, isBad: isBad.isSelected, isSad: isSad.isSelected, isUsually: isUsually.isSelected, isPleasure: isPleasure.isSelected, isHappy: isHappy.isSelected, isToday: isTodayDate)
         
         if addTextView.text != "" {
             addTextView.text = ""
@@ -68,6 +72,7 @@ class AddViewController: UIViewController {
             isUsually.isSelected = false
             isPleasure.isSelected = false
             isHappy.isSelected = false
+            
             
             emotionistViewModel.addEmotion(emotion)
             _ = navigationController?.popViewController(animated: true)
