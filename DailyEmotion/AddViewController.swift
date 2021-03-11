@@ -22,6 +22,7 @@ class AddViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         addTextView.delegate = self
         addTextView.text = """
 당신의 오늘 기분은 어떤가요?
@@ -33,34 +34,81 @@ class AddViewController: UIViewController {
         addTextView.layer.borderWidth = 1.0
         addTextView.layer.borderColor = UIColor.black.cgColor
         addTextView.layer.cornerRadius = 10
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func isBadButtonTapped(_ sender: Any) {
         isBad.isSelected = !isBad.isSelected
-        isSad.isSelected = !isSad.isSelected
-        isUsually.isSelected = !isUsually.isSelected
-        isPleasure.isSelected = !isPleasure.isSelected
-        isHappy.isSelected = !isHappy.isSelected
-        
+                if isBad.isSelected {
+                    isSad.isSelected = !isBad.isSelected
+                    isUsually.isSelected = !isBad.isSelected
+                    isPleasure.isSelected = !isBad.isSelected
+                    isHappy.isSelected = !isBad.isSelected
+                }else {
+                    isSad.isSelected = isBad.isSelected
+                    isUsually.isSelected = isBad.isSelected
+                    isPleasure.isSelected = isBad.isSelected
+                    isHappy.isSelected = isBad.isSelected
+                }
     }
     @IBAction func isSadButtonTapped(_ sender: Any) {
         isSad.isSelected = !isSad.isSelected
+         if isSad.isSelected {
+             isBad.isSelected = !isSad.isSelected
+             isUsually.isSelected = !isSad.isSelected
+             isPleasure.isSelected = !isSad.isSelected
+             isHappy.isSelected = !isSad.isSelected
+         }else {
+             isBad.isSelected = isSad.isSelected
+             isUsually.isSelected = isSad.isSelected
+             isPleasure.isSelected = isSad.isSelected
+             isHappy.isSelected = isSad.isSelected
+         }
     }
     @IBAction func isUsuallyButtonTapped(_ sender: Any) {
         isUsually.isSelected = !isUsually.isSelected
+        if isUsually.isSelected {
+            isBad.isSelected = !isUsually.isSelected
+            isSad.isSelected = !isUsually.isSelected
+            isPleasure.isSelected = !isUsually.isSelected
+            isHappy.isSelected = !isUsually.isSelected
+        }else {
+            isBad.isSelected = isUsually.isSelected
+            isSad.isSelected = isUsually.isSelected
+            isPleasure.isSelected = isUsually.isSelected
+            isHappy.isSelected = isUsually.isSelected
+        }
     }
     @IBAction func isPleasureButtonTapped(_ sender: Any) {
         isPleasure.isSelected = !isPleasure.isSelected
+        if isPleasure.isSelected {
+            isBad.isSelected = !isPleasure.isSelected
+            isSad.isSelected = !isPleasure.isSelected
+            isUsually.isSelected = !isPleasure.isSelected
+            isHappy.isSelected = !isPleasure.isSelected
+        }else {
+            isBad.isSelected = isPleasure.isSelected
+            isSad.isSelected = isPleasure.isSelected
+            isUsually.isSelected = isPleasure.isSelected
+            isHappy.isSelected = isPleasure.isSelected
+        }
     }
     @IBAction func isHappyButtonTapped(_ sender: Any) {
         isHappy.isSelected = !isHappy.isSelected
+        if isHappy.isSelected {
+            isBad.isSelected = !isHappy.isSelected
+            isSad.isSelected = !isHappy.isSelected
+            isPleasure.isSelected = !isHappy.isSelected
+            isUsually.isSelected = !isHappy.isSelected
+        }else {
+            isBad.isSelected = isHappy.isSelected
+            isSad.isSelected = isHappy.isSelected
+            isPleasure.isSelected = isHappy.isSelected
+            isUsually.isSelected = isHappy.isSelected
+        }
     }
     
 
     @IBAction func addBtn(_ sender: UIButton) {
-//        guard let detail = addTextView.text,
-//              detail.isEmpty == false else { return }
         let detail = addTextView.text!
         
         let today = NSDate()

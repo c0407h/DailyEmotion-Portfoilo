@@ -275,12 +275,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Emotion" id="oul-5q-0Hs">
-                        <barButtonItem key="leftBarButtonItem" title="settingItem" image="gearshape.fill" catalog="system" id="bS6-GQ-6cj">
+                        <barButtonItem key="rightBarButtonItem" title="settingItem" image="gearshape.fill" catalog="system" id="bS6-GQ-6cj">
                             <connections>
                                 <segue destination="rpU-dP-rHb" kind="show" identifier="sgSetting" id="A4E-Uh-hfB"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="편집" id="oh2-vg-e4c"/>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="Us8-i5-TLh" id="9TO-WO-JvP"/>
@@ -288,7 +287,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-678.46153846153845" y="903.55450236966817"/>
+            <point key="canvasLocation" x="-689" y="904"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="OWh-y3-TYg">

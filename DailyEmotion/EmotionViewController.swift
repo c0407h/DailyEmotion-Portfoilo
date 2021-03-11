@@ -21,32 +21,28 @@ class EmotionViewController: UIViewController{
         
         emotionListViewModel.loadTasks()
   
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         collectionView.reloadData()
     }
     
-    
 }
 
 extension EmotionViewController {
     @objc private func adjustInputView(noti: Notification) {
         guard let userInfo = noti.userInfo else { return }
-        // TODO: 키보드 높이에 따른 인풋뷰 위치 변경
-        
     }
 }
 
 extension EmotionViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // TODO: 섹션 몇개
         return emotionListViewModel.numOfSection
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // TODO: 섹션별 아이템 몇개
+  
         if section == 0 {
             return emotionListViewModel.todayEmotions.count
         } else {
@@ -69,11 +65,6 @@ extension EmotionViewController: UICollectionViewDataSource {
         }
         cell.updateUI(emotion: emotion)
         
-        
-        // TODO: 커스텀 셀
-        // TODO: todo 를 이용해서 updateUI
-        // TODO: doneButtonHandler 작성
-        // TODO: deleteButtonHandler 작성
         cell.deleteButtonTapHandler = {
             self.emotionListViewModel.deleteEmotion(emotion)
             self.collectionView.reloadData()
@@ -102,7 +93,6 @@ extension EmotionViewController: UICollectionViewDataSource {
 
 extension EmotionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        // TODO: 사이즈 계산하기
         let width: CGFloat = collectionView.bounds.width
         let height: CGFloat = 30
         return CGSize(width: width, height: height)
@@ -131,7 +121,6 @@ class EmotionListCell: UICollectionViewCell {
     }
     
     func updateUI(emotion: Emotion) {
-        // TODO: 셀 업데이트 하기
         descriptionLabel.text = emotion.detail
         dateLabel.text = emotion.isToday
     }
@@ -139,12 +128,10 @@ class EmotionListCell: UICollectionViewCell {
 
     
     func reset() {
-        // TODO: reset로직 구현
         descriptionLabel.alpha = 1
-        deleteButton.isHidden = true
+//        deleteButton.isHidden = true
     }
     @IBAction func deleteButtonTapped(_ sender: Any) {
-        // [x] TODO: deleteButton 처리
         print("삭제가되나요")
         deleteButtonTapHandler?()
     }

@@ -19,14 +19,15 @@ struct Emotion: Codable, Equatable {
     var isToday: String
     
     
-    mutating func update(isDone: Bool, detail: String, isToday: Date) {
+    mutating func update(isDone: Bool, detail: String, isToday: String) {
         // TODO: update 로직 추가
-        
+        self.detail = detail
+        self.isToday = isToday
     }
     
     static func == (lhs: Self, rhs: Self) -> Bool {
         // TODO: 동등 조건 추가
-        return true
+        return lhs.id == rhs.id
     }
     
 
