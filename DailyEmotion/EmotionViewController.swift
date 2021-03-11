@@ -141,7 +141,7 @@ class EmotionListCell: UICollectionViewCell {
     func reset() {
         // TODO: reset로직 구현
         descriptionLabel.alpha = 1
-//        deleteButton.isHidden = true
+        deleteButton.isHidden = true
     }
     @IBAction func deleteButtonTapped(_ sender: Any) {
         // [x] TODO: deleteButton 처리

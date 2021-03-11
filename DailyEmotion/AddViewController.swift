@@ -66,18 +66,31 @@ class AddViewController: UIViewController {
         let emotion = EmotionManager.shared.createEmotion(detail: detail, isBad: isBad.isSelected, isSad: isSad.isSelected, isUsually: isUsually.isSelected, isPleasure: isPleasure.isSelected, isHappy: isHappy.isSelected, isToday: isTodayDate)
         
         if addTextView.text != "" {
-            addTextView.text = ""
-            isSad.isSelected = false
-            isBad.isSelected = false
-            isUsually.isSelected = false
-            isPleasure.isSelected = false
-            isHappy.isSelected = false
             
-            
-            emotionistViewModel.addEmotion(emotion)
-            
-            
-            _ = navigationController?.popViewController(animated: true)
+            if addTextView.text == """
+당신의 오늘 기분은 어떤가요?
+누구에게도 털어 놓지 못하는 이야기가 있나요?
+편하게 적어봐요 마음이 후련해지고 행복해질때까지
+"""{            print("아무것도없어요")
+                let alert = UIAlertController(title: "등록 실패", message: "내용이 없습니다.", preferredStyle: UIAlertController.Style.alert)
+                let onAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+                alert.addAction(onAction)
+                present(alert, animated: true, completion: nil)
+                
+            }else{
+                addTextView.text = ""
+                isSad.isSelected = false
+                isBad.isSelected = false
+                isUsually.isSelected = false
+                isPleasure.isSelected = false
+                isHappy.isSelected = false
+                
+                
+                emotionistViewModel.addEmotion(emotion)
+                
+                
+                _ = navigationController?.popViewController(animated: true)
+            }
             
             
         } else {
