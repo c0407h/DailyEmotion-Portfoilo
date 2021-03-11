@@ -38,6 +38,11 @@ class AddViewController: UIViewController {
     
     @IBAction func isBadButtonTapped(_ sender: Any) {
         isBad.isSelected = !isBad.isSelected
+        isSad.isSelected = !isSad.isSelected
+        isUsually.isSelected = !isUsually.isSelected
+        isPleasure.isSelected = !isPleasure.isSelected
+        isHappy.isSelected = !isHappy.isSelected
+        
     }
     @IBAction func isSadButtonTapped(_ sender: Any) {
         isSad.isSelected = !isSad.isSelected
@@ -85,13 +90,10 @@ class AddViewController: UIViewController {
                 isPleasure.isSelected = false
                 isHappy.isSelected = false
                 
-                
                 emotionistViewModel.addEmotion(emotion)
-                
-                
+    
                 _ = navigationController?.popViewController(animated: true)
             }
-            
             
         } else {
             print("아무것도없어요")
@@ -101,8 +103,6 @@ class AddViewController: UIViewController {
             present(alert, animated: true, completion: nil)
             
         }
-        
-        
     }
 }
 
@@ -118,7 +118,6 @@ extension AddViewController: UITextViewDelegate {
         addTextView.textColor = UIColor.black
 
       }
-
     }
 
    
@@ -132,12 +131,9 @@ extension AddViewController: UITextViewDelegate {
 누구에게도 털어 놓지 못하는 이야기가 있나요?
 편하게 적어봐요 마음이 후련해지고 행복해질때까지
 """
-
         addTextView.textColor = UIColor.lightGray
 
       }
-
     }
-    
 }
 
