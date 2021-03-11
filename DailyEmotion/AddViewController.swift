@@ -130,7 +130,7 @@ class AddViewController: UIViewController {
                 alert.addAction(onAction)
                 present(alert, animated: true, completion: nil)
                 
-            }else{
+            } else {
                 addTextView.text = ""
                 isSad.isSelected = false
                 isBad.isSelected = false

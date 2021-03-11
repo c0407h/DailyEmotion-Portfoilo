@@ -8,6 +8,7 @@
 import UIKit
 
 
+
 var emotionImage = ["🟦","🟪","⬛️","🟩","🟥"]
 
 class EmotionViewController: UIViewController{
@@ -100,13 +101,13 @@ extension EmotionViewController: UICollectionViewDelegateFlowLayout {
 }
 
 class EmotionListCell: UICollectionViewCell {
-    
 
     @IBOutlet weak var myEmotion: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet var deleteButton: UIButton!
 
+    
     var deleteButtonTapHandler: (() -> Void)?
     
     
@@ -123,6 +124,18 @@ class EmotionListCell: UICollectionViewCell {
     func updateUI(emotion: Emotion) {
         descriptionLabel.text = emotion.detail
         dateLabel.text = emotion.isToday
+        
+        if emotion.isSad {
+            myEmotion.text = "🟦"
+        } else if emotion.isBad{
+            myEmotion.text = "🟪"
+        } else if emotion.isUsually{
+            myEmotion.text = "⬛️"
+        } else if emotion.isPleasure{
+            myEmotion.text = "🟩"
+        } else{
+            myEmotion.text = "🟥"
+        }
     }
     
 
