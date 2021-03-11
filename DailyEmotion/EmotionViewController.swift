@@ -74,6 +74,10 @@ extension EmotionViewController: UICollectionViewDataSource {
         // TODO: todo 를 이용해서 updateUI
         // TODO: doneButtonHandler 작성
         // TODO: deleteButtonHandler 작성
+        cell.deleteButtonTapHandler = {
+            self.emotionListViewModel.deleteEmotion(emotion)
+            self.collectionView.reloadData()
+        }
         return cell
     }
     
@@ -111,8 +115,9 @@ class EmotionListCell: UICollectionViewCell {
     @IBOutlet weak var myEmotion: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    
-    
+    @IBOutlet var deleteButton: UIButton!
+
+    var deleteButtonTapHandler: (() -> Void)?
     
     
     override func awakeFromNib() {
@@ -135,7 +140,13 @@ class EmotionListCell: UICollectionViewCell {
     
     func reset() {
         // TODO: reset로직 구현
-        
+        descriptionLabel.alpha = 1
+//        deleteButton.isHidden = true
+    }
+    @IBAction func deleteButtonTapped(_ sender: Any) {
+        // [x] TODO: deleteButton 처리
+        print("삭제가되나요")
+        deleteButtonTapHandler?()
     }
     
 

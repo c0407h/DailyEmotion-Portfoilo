@@ -195,6 +195,9 @@
                                                     <state key="normal" image="xmark.circle.fill" catalog="system">
                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="deleteButtonTapped:" destination="oXV-Gc-NzM" eventType="touchUpInside" id="kIL-Gh-gle"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -213,6 +216,7 @@
                                         <size key="customSize" width="390" height="90"/>
                                         <connections>
                                             <outlet property="dateLabel" destination="LD8-Ip-0xj" id="qLf-XH-MyF"/>
+                                            <outlet property="deleteButton" destination="4IZ-lt-W2x" id="qGx-d1-jlb"/>
                                             <outlet property="descriptionLabel" destination="MdX-fv-14e" id="A44-CS-Z7q"/>
                                             <outlet property="myEmotion" destination="bd3-wq-Dxv" id="HGU-Ho-Nw4"/>
                                             <segue destination="tTS-ik-DKt" kind="show" identifier="sgDetail" id="wHi-b1-Yqw"/>

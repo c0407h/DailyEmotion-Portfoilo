@@ -60,6 +60,10 @@ class EmotionManager {
         emotions.append(emotion)
         saveEmotion()
     }
+    func deleteEmotion(_ emotion: Emotion){
+        emotions = emotions.filter { $0.id != emotion.id}
+        saveEmotion()
+    }
     
     func saveEmotion() {
         Storage.store(emotions, to: .documents, as: "emotions.json")
@@ -119,5 +123,8 @@ class EmotionViewModel {
     }
     func loadTasks() {
         manager.retrieveEmotion()
+    }
+    func deleteEmotion(_ emotion: Emotion){
+        manager.deleteEmotion(emotion)
     }
 }
