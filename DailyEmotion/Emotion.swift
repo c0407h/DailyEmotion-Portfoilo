@@ -59,6 +59,7 @@ class EmotionManager {
     
     func addEmotion(_ emotion: Emotion) {
         emotions.append(emotion)
+        emotions.reverse()
         saveEmotion()
     }
     func deleteEmotion(_ emotion: Emotion){
@@ -128,4 +129,5 @@ class EmotionViewModel {
     func deleteEmotion(_ emotion: Emotion){
         manager.deleteEmotion(emotion)
     }
+ 
 }

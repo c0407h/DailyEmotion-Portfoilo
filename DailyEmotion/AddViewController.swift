@@ -23,6 +23,8 @@ class AddViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        isUsually.isSelected = true
+        
         addTextView.delegate = self
         addTextView.text = """
 당신의 오늘 기분은 어떤가요?
@@ -163,7 +165,7 @@ extension AddViewController: UITextViewDelegate {
 
         addTextView.text = nil
 
-        addTextView.textColor = UIColor.black
+        addTextView.textColor = UIColor.systemFill
 
       }
     }
@@ -179,7 +181,6 @@ extension AddViewController: UITextViewDelegate {
 누구에게도 털어 놓지 못하는 이야기가 있나요?
 편하게 적어봐요 마음이 후련해지고 행복해질때까지
 """
-        addTextView.textColor = UIColor.lightGray
 
       }
     }

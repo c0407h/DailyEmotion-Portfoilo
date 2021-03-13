@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import SwipeCellKit
 
 
 var emotionImage = ["🟦","🟪","⬛️","🟩","🟥"]
@@ -15,20 +15,25 @@ class EmotionViewController: UIViewController{
     @IBOutlet weak var collectionView: UICollectionView!
         
     let emotionListViewModel = EmotionViewModel()
-    
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        emotionListViewModel.loadTasks()
   
-        
+    override func viewDidLoad() {
+          super.viewDidLoad()
+
+          emotionListViewModel.loadTasks()
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
         collectionView.reloadData()
     }
     
+    
+    //pod
+    
+    
+    
+    
+ 
 }
 
 extension EmotionViewController {
@@ -37,10 +42,13 @@ extension EmotionViewController {
     }
 }
 
+
 extension EmotionViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return emotionListViewModel.numOfSection
     }
+    
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
   
@@ -58,6 +66,10 @@ extension EmotionViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EmotionListCell", for: indexPath) as? EmotionListCell else {
             return UICollectionViewCell()
         }
+        
+        
+        
+        
         var emotion: Emotion
         if indexPath.section == 0 {
             emotion = emotionListViewModel.todayEmotions[indexPath.item]
@@ -89,6 +101,7 @@ extension EmotionViewController: UICollectionViewDataSource {
         default:
             return UICollectionReusableView()
         }
+    
     }
 }
 
@@ -120,32 +133,40 @@ class EmotionListCell: UICollectionViewCell {
         super.prepareForReuse()
         reset()
     }
+   
+    @IBAction func cellSetting(_ sender: UIBarButtonItem) {
+        deleteButton.isHidden = false
+    }
+    
     
     func updateUI(emotion: Emotion) {
+        
         descriptionLabel.text = emotion.detail
         dateLabel.text = emotion.isToday
         
         if emotion.isSad {
-            myEmotion.text = "🟦"
-        } else if emotion.isBad{
             myEmotion.text = "🟪"
+        } else if emotion.isBad{
+            myEmotion.text = "🟦"
         } else if emotion.isUsually{
             myEmotion.text = "⬛️"
         } else if emotion.isPleasure{
             myEmotion.text = "🟩"
-        } else{
+        } else if emotion.isHappy{
             myEmotion.text = "🟥"
+        }else {
+            myEmotion.text = "⬛️"
         }
     }
     
-
-    
     func reset() {
         descriptionLabel.alpha = 1
-//        deleteButton.isHidden = true
+        deleteButton.isHidden = false
     }
     @IBAction func deleteButtonTapped(_ sender: Any) {
         print("삭제가되나요")
+        //여기 얼럿을 띄워 삭제할건지 물어보기
+        
         deleteButtonTapHandler?()
     }
     
