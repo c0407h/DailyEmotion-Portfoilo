@@ -49,18 +49,18 @@ class EmotionViewController: UIViewController, SwipeCollectionViewCellDelegate{
         
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "sgDetail" {
-//            let cell = sender as! UICollectionViewCell
-//            let indexPath = self.collectionView.indexPath(for: cell)
-//            print(indexPath)
-//            let detailView = segue.destination as!
-//                DetailViewController
-//            
-////            detailView.receiveItem([((indexPath! as NSIndexPath).item)])
-////            print(Emotion[((indexPath! as NSIndexPath).item)])
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "sgDetail" {
+            let cell = sender as! UICollectionViewCell
+            let indexPath = self.collectionView.indexPath(for: cell)
+            
+            let detailView = segue.destination as!
+                DetailViewController
+            print(detailView)
+//            detailView.receiveItem([((indexPath! as NSIndexPath).item)])
+//            print(Emotion[((indexPath! as NSIndexPath).item)])
+        }
+    }
     
  
 }
