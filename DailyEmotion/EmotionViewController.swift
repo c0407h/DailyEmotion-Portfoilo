@@ -37,14 +37,16 @@ class EmotionViewController: UIViewController, SwipeCollectionViewCellDelegate{
     let emotionListViewModel = EmotionViewModel()
   
     override func viewDidLoad() {
+        
           super.viewDidLoad()
-
-          emotionListViewModel.loadTasks()
+          
+        emotionListViewModel.loadTasks()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         
         collectionView.reloadData()
+        
     }
     
     

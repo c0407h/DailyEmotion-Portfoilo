@@ -59,7 +59,6 @@ class EmotionManager {
     
     func addEmotion(_ emotion: Emotion) {
         emotions.append(emotion)
-        emotions.reverse()
         saveEmotion()
     }
     func deleteEmotion(_ emotion: Emotion){
@@ -96,7 +95,7 @@ class EmotionViewModel {
     private let manager = EmotionManager.shared
     
     var emotions: [Emotion] {
-        return manager.emotions
+        return manager.emotions.reversed()
     }
     
     var todayEmotions: [Emotion] {
@@ -124,6 +123,7 @@ class EmotionViewModel {
         return Section.allCases.count
     }
     func loadTasks() {
+        
         manager.retrieveEmotion()
     }
     func deleteEmotion(_ emotion: Emotion){
