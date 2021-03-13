@@ -9,7 +9,7 @@ import UIKit
 
 struct Emotion: Codable, Equatable {
     let id: Int
-    var isDone: Bool
+
     var detail: String
     var isBad: Bool
     var isSad: Bool
@@ -19,7 +19,7 @@ struct Emotion: Codable, Equatable {
     var isToday: String
     
     
-    mutating func update(isDone: Bool, detail: String, isToday: String) {
+    mutating func update(detail: String, isToday: String) {
         // TODO: update 로직 추가
         self.detail = detail
         self.isToday = isToday
@@ -53,7 +53,7 @@ class EmotionManager {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let isTodayDate = dateFormatter.string(from: today as Date)
                 
-        return Emotion(id: nextId, isDone: false, detail: detail, isBad: isBad, isSad: isSad, isUsually: isUsually, isPleasure: isPleasure, isHappy: isHappy, isToday: isTodayDate)
+        return Emotion(id: nextId, detail: detail, isBad: isBad, isSad: isSad, isUsually: isUsually, isPleasure: isPleasure, isHappy: isHappy, isToday: isTodayDate)
 
     }
     

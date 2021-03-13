@@ -287,21 +287,34 @@
             </objects>
             <point key="canvasLocation" x="-689.23076923076917" y="903.55450236966817"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="OWh-y3-TYg">
             <objects>
-                <viewController id="tTS-ik-DKt" sceneMemberID="viewController">
+                <viewController id="tTS-ik-DKt" customClass="DetailViewController" customModule="DailyEmotion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5CY-8U-cOk">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="u7J-gs-odM">
+                                <rect key="frame" x="16" y="102" width="358" height="213"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="p61-eL-foX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="W9j-uC-sp2"/>
+                    <connections>
+                        <outlet property="detailTextView" destination="u7J-gs-odM" id="m8r-mK-VG6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dO2-64-zcB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="351" y="904"/>
+            <point key="canvasLocation" x="350.76923076923077" y="903.55450236966817"/>
         </scene>
         <!--Add View Controller-->
         <scene sceneID="dY7-CV-Xbq">
