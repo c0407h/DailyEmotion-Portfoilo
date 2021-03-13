@@ -11,7 +11,27 @@ import SwipeCellKit
 
 var emotionImage = ["🟦","🟪","⬛️","🟩","🟥"]
 
-class EmotionViewController: UIViewController{
+class EmotionViewController: UIViewController, SwipeCollectionViewCellDelegate{
+    
+    func collectionView(_ collectionView: UICollectionView, editActionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        
+        
+        guard orientation == .right else { return nil }
+
+         let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
+             // handle action by updating model with deletion
+
+            (self.collectionView.cellForItem(at: indexPath) as? EmotionListCell)?.deleteButtonTapHandler?()
+         
+         }
+
+         // customize the action appearance
+         deleteAction.image = UIImage(named: "delete")
+
+         return [deleteAction]
+    }
+    
+    
     @IBOutlet weak var collectionView: UICollectionView!
         
     let emotionListViewModel = EmotionViewModel()
@@ -28,10 +48,6 @@ class EmotionViewController: UIViewController{
     }
     
     
-    //pod
-    
-    
-    
     
  
 }
@@ -43,12 +59,14 @@ extension EmotionViewController {
 }
 
 
+
+
+
 extension EmotionViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return emotionListViewModel.numOfSection
     }
-    
-    
+
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
   
@@ -68,7 +86,8 @@ extension EmotionViewController: UICollectionViewDataSource {
         }
         
         
-        
+        cell.delegate = self
+    
         
         var emotion: Emotion
         if indexPath.section == 0 {
@@ -103,23 +122,33 @@ extension EmotionViewController: UICollectionViewDataSource {
         }
     
     }
+
 }
+
+
+
+
+
 
 extension EmotionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width: CGFloat = collectionView.bounds.width
-        let height: CGFloat = 30
+        let height: CGFloat = 70
         return CGSize(width: width, height: height)
     }
 }
 
-class EmotionListCell: UICollectionViewCell {
 
+
+
+
+
+class EmotionListCell: SwipeCollectionViewCell {
+    
     @IBOutlet weak var myEmotion: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet var deleteButton: UIButton!
-
+//    @IBOutlet var deleteButton: UIButton!
     
     var deleteButtonTapHandler: (() -> Void)?
     
@@ -133,16 +162,14 @@ class EmotionListCell: UICollectionViewCell {
         super.prepareForReuse()
         reset()
     }
-   
-    @IBAction func cellSetting(_ sender: UIBarButtonItem) {
-        deleteButton.isHidden = false
-    }
-    
+
+
     
     func updateUI(emotion: Emotion) {
         
         descriptionLabel.text = emotion.detail
         dateLabel.text = emotion.isToday
+        
         
         if emotion.isSad {
             myEmotion.text = "🟪"
@@ -161,15 +188,43 @@ class EmotionListCell: UICollectionViewCell {
     
     func reset() {
         descriptionLabel.alpha = 1
-        deleteButton.isHidden = false
+//        deleteButton.isHidden = true
     }
-    @IBAction func deleteButtonTapped(_ sender: Any) {
-        print("삭제가되나요")
-        //여기 얼럿을 띄워 삭제할건지 물어보기
-        
-        deleteButtonTapHandler?()
+//    @IBAction func deleteButtonTapped(_ sender: Any) {
+//        print("삭제가되나요")
+//        //여기 얼럿을 띄워 삭제할건지 물어보기
+//
+//        deleteButtonTapHandler?()
+//    }
+//
+
+}
+// MARK - SwipeCollectionViewCellDelegate
+extension EmotionListCell: SwipeCollectionViewCellDelegate{
+    func collectionView(_ collectionView: UICollectionView, editActionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        guard orientation == .right else { return nil }
+
+         let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
+         
+            
+         }
+
+         // customize the action appearance
+         deleteAction.image = UIImage(named: "delete")
+
+         return [deleteAction]
     }
     
+   
+
+    //셀액션에 대한 옵션 설정
+    func collectionView(_ collectionView: UICollectionView, editActionsOptionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
+        var options = SwipeOptions()
+        options.expansionStyle = .destructive
+        options.transitionStyle = .drag
+        
+        return options
+    }
 
 }
 
@@ -183,3 +238,4 @@ class EmotionListHeaderView: UICollectionReusableView {
         super.awakeFromNib()
     }
 }
+

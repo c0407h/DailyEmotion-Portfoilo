@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5733C02C25FCDD6600DA9110 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5733C02B25FCDD6600DA9110 /* SettingViewController.swift */; };
 		57404B6725F64A57000A5EFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57404B6625F64A57000A5EFF /* AppDelegate.swift */; };
 		57404B6925F64A57000A5EFF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57404B6825F64A57000A5EFF /* SceneDelegate.swift */; };
 		57404B6E25F64A57000A5EFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57404B6C25F64A57000A5EFF /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		49DB411375E6D706EC5A0D27 /* Pods_DailyEmotion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyEmotion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5733C02B25FCDD6600DA9110 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		57404B6325F64A57000A5EFF /* DailyEmotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyEmotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57404B6625F64A57000A5EFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57404B6825F64A57000A5EFF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,7 +56,6 @@
 				D45F4BFAAAFC5BA46807DF7B /* Pods-DailyEmotion.debug.xcconfig */,
 				F5FE461572EC2E18BB9B66D2 /* Pods-DailyEmotion.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -85,6 +86,7 @@
 				57F0139525F7275D0078E44C /* AddViewController.swift */,
 				57404B7B25F65084000A5EFF /* EmotionViewController.swift */,
 				57404B8625F66589000A5EFF /* Emotion.swift */,
+				5733C02B25FCDD6600DA9110 /* SettingViewController.swift */,
 				57404B8925F66593000A5EFF /* Storage.swift */,
 				57404B6F25F64A59000A5EFF /* Assets.xcassets */,
 				57404B7125F64A59000A5EFF /* LaunchScreen.storyboard */,
@@ -220,6 +222,7 @@
 				57F0139625F7275D0078E44C /* AddViewController.swift in Sources */,
 				57404B6725F64A57000A5EFF /* AppDelegate.swift in Sources */,
 				57404B6925F64A57000A5EFF /* SceneDelegate.swift in Sources */,
+				5733C02C25FCDD6600DA9110 /* SettingViewController.swift in Sources */,
 				57404B8A25F66593000A5EFF /* Storage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
