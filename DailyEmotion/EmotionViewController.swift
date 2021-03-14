@@ -9,24 +9,20 @@ import UIKit
 import SwipeCellKit
 
 
-var emotionImage = ["🟦","🟪","⬛️","🟩","🟥"]
 
 class EmotionViewController: UIViewController, SwipeCollectionViewCellDelegate{
     
     func collectionView(_ collectionView: UICollectionView, editActionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
-        
-        
+
         guard orientation == .right else { return nil }
 
          let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
              // handle action by updating model with deletion
-
+            
             (self.collectionView.cellForItem(at: indexPath) as? EmotionListCell)?.deleteButtonTapHandler?()
          
          }
-
-         // customize the action appearance
-         deleteAction.image = UIImage(named: "delete")
+          deleteAction.image = UIImage(named: "delete")
 
          return [deleteAction]
     }
@@ -39,9 +35,10 @@ class EmotionViewController: UIViewController, SwipeCollectionViewCellDelegate{
     override func viewDidLoad() {
         
           super.viewDidLoad()
-          
+            
         emotionListViewModel.loadTasks()
     }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         
@@ -49,20 +46,37 @@ class EmotionViewController: UIViewController, SwipeCollectionViewCellDelegate{
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //print((collectionView.cellForItem(at: indexPath) as? EmotionListCell)?.descriptionLabel.text)
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "sgDetail" {
-            let cell = sender as! UICollectionViewCell
-            let indexPath = self.collectionView.indexPath(for: cell)
-            
-            let detailView = segue.destination as!
-                DetailViewController
-            print(detailView)
-//            detailView.receiveItem([((indexPath! as NSIndexPath).item)])
-//            print(Emotion[((indexPath! as NSIndexPath).item)])
+        print("ASDF")
+//        var detailText = "asdf"
+        guard let nextViewController = segue.destination as? DetailViewController else {
+            return
         }
+
+        
+        guard let indexp: [IndexPath]? = collectionView.indexPathsForSelectedItems else {
+            return
+        }
+        
+        //for id in indexp! {
+        var cc = (collectionView.cellForItem(at: indexp![0]) as? EmotionListCell)
+        nextViewController.detailViewText = cc?.descriptionLabel.text
+        //}
+        
+        
+//
+//        selectedCell = collectionView.cellForItem(at: indexp) as? EmotionListCell
+//
+//
+//        nextViewController.detailViewText = selectedCell?.descriptionLabel.text
+        
     }
     
- 
+    
 }
 
 extension EmotionViewController {
@@ -71,16 +85,11 @@ extension EmotionViewController {
     }
 }
 
-
-
-
-
 extension EmotionViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return emotionListViewModel.numOfSection
     }
 
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
   
         if section == 0 {
@@ -90,18 +99,14 @@ extension EmotionViewController: UICollectionViewDataSource {
         }
     }
     
-    
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EmotionListCell", for: indexPath) as? EmotionListCell else {
             return UICollectionViewCell()
         }
         
-        
         cell.delegate = self
     
-        
         var emotion: Emotion
         if indexPath.section == 0 {
             emotion = emotionListViewModel.todayEmotions[indexPath.item]
@@ -114,6 +119,7 @@ extension EmotionViewController: UICollectionViewDataSource {
             self.emotionListViewModel.deleteEmotion(emotion)
             self.collectionView.reloadData()
         }
+        
         return cell
     }
     
@@ -135,13 +141,8 @@ extension EmotionViewController: UICollectionViewDataSource {
         }
     
     }
-
+    
 }
-
-
-
-
-
 
 extension EmotionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -150,6 +151,8 @@ extension EmotionViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: width, height: height)
     }
 }
+
+
 
 
 
@@ -166,6 +169,7 @@ class EmotionListCell: SwipeCollectionViewCell {
     var deleteButtonTapHandler: (() -> Void)?
     
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         reset()
@@ -175,7 +179,6 @@ class EmotionListCell: SwipeCollectionViewCell {
         super.prepareForReuse()
         reset()
     }
-
 
     
     func updateUI(emotion: Emotion) {
@@ -199,6 +202,7 @@ class EmotionListCell: SwipeCollectionViewCell {
         }
     }
     
+    
     func reset() {
         descriptionLabel.alpha = 1
 //        deleteButton.isHidden = true
@@ -209,8 +213,8 @@ class EmotionListCell: SwipeCollectionViewCell {
 //
 //        deleteButtonTapHandler?()
 //    }
-//
 
+    
 }
 // MARK - SwipeCollectionViewCellDelegate
 extension EmotionListCell: SwipeCollectionViewCellDelegate{
@@ -224,26 +228,23 @@ extension EmotionListCell: SwipeCollectionViewCellDelegate{
 
          // customize the action appearance
          deleteAction.image = UIImage(named: "delete")
-
+        
          return [deleteAction]
     }
-    
-   
 
     //셀액션에 대한 옵션 설정
     func collectionView(_ collectionView: UICollectionView, editActionsOptionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
         var options = SwipeOptions()
         options.expansionStyle = .destructive
         options.transitionStyle = .drag
-        
         return options
     }
+    
+    
 
 }
 
-
 class EmotionListHeaderView: UICollectionReusableView {
-    
 
     @IBOutlet weak var sectionTitleLabel: UILabel!
     

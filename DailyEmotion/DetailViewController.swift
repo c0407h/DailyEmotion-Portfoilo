@@ -8,24 +8,28 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-    var receiveItem = ""
+
     
     @IBOutlet var detailTextView: UITextView!
+    var detailViewText: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        detailTextView.text = receiveItem
         
         detailTextView.layer.borderWidth = 1.0
         detailTextView.layer.borderColor = UIColor.systemFill.cgColor
         detailTextView.layer.cornerRadius = 10
         detailTextView.isEditable = false
+        
+        detailTextView.text = detailViewText
     }
-    func receiveItem(_ item: String){
-        receiveItem = item
+    override func viewWillAppear(_ animated: Bool) {
+        
+
     }
-    
+
 
     /*
     // MARK: - Navigation

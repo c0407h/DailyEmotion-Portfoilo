@@ -309,7 +309,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="W9j-uC-sp2"/>
                     <connections>
-                        <outlet property="detailTextView" destination="u7J-gs-odM" id="m8r-mK-VG6"/>
+                        <outlet property="detailTextView" destination="u7J-gs-odM" id="6ud-8b-RqQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dO2-64-zcB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

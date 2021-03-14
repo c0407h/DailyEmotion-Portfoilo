@@ -16,6 +16,7 @@ class AddViewController: UIViewController {
     @IBOutlet var isHappy: UIButton!
     
     @IBOutlet var addTextView: UITextView!
+    
     let date = Date()
     
     let emotionistViewModel = EmotionViewModel()
