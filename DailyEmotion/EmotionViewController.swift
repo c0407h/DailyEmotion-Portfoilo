@@ -17,7 +17,6 @@ class EmotionViewController: UIViewController, SwipeCollectionViewCellDelegate{
         guard orientation == .right else { return nil }
 
          let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
-             // handle action by updating model with deletion
             
             (self.collectionView.cellForItem(at: indexPath) as? EmotionListCell)?.deleteButtonTapHandler?()
          
@@ -28,6 +27,7 @@ class EmotionViewController: UIViewController, SwipeCollectionViewCellDelegate{
     }
     
     
+    @IBOutlet var addBtnView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
         
     let emotionListViewModel = EmotionViewModel()
@@ -35,7 +35,37 @@ class EmotionViewController: UIViewController, SwipeCollectionViewCellDelegate{
     override func viewDidLoad() {
         
           super.viewDidLoad()
-            
+        
+        addBtnView.layer.cornerRadius = addBtnView.frame.width / 2
+        addBtnView.layer.cornerRadius = addBtnView.frame.height / 2
+        
+        let plist = UserDefaults.standard
+        let darkModeSelect = plist.integer(forKey: "darkModeSelect")
+        
+        if darkModeSelect == 0 {
+            UIApplication.shared.windows.forEach { window in
+                window.overrideUserInterfaceStyle = .unspecified
+                }
+        } else if darkModeSelect == 1 {
+            UIApplication.shared.windows.forEach { window in
+                window.overrideUserInterfaceStyle = .light
+            }
+        } else {
+            UIApplication.shared.windows.forEach { window in
+                window.overrideUserInterfaceStyle = .dark
+            }
+        }
+        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+                if launchedBefore
+                {
+                    print("Not first launch.")
+                }
+                else
+                {
+                    print("First launch")
+                    UserDefaults.standard.set(true, forKey: "launchedBefore")
+                    
+                }
         emotionListViewModel.loadTasks()
     }
     
@@ -46,13 +76,10 @@ class EmotionViewController: UIViewController, SwipeCollectionViewCellDelegate{
         
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //print((collectionView.cellForItem(at: indexPath) as? EmotionListCell)?.descriptionLabel.text)
-    }
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("ASDF")
-//        var detailText = "asdf"
         guard let nextViewController = segue.destination as? DetailViewController else {
             return
         }
@@ -91,7 +118,6 @@ extension EmotionViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-  
         if section == 0 {
             return emotionListViewModel.todayEmotions.count
         } else {
@@ -100,7 +126,6 @@ extension EmotionViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EmotionListCell", for: indexPath) as? EmotionListCell else {
             return UICollectionViewCell()
         }
@@ -164,7 +189,6 @@ class EmotionListCell: SwipeCollectionViewCell {
     @IBOutlet weak var myEmotion: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-//    @IBOutlet var deleteButton: UIButton!
     
     var deleteButtonTapHandler: (() -> Void)?
     

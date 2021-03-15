@@ -30,7 +30,10 @@ class DetailViewController: UIViewController {
 
     }
 
-
+    @IBAction func backBtn(_ sender: UIBarButtonItem) {
+        _ = navigationController?.popViewController(animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -11,25 +11,36 @@ class SettingViewController: UITableViewController {
 
     
     @IBOutlet weak var darkModeSelect: UISegmentedControl!
+    @IBOutlet weak var versionInfo: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        let plist = UserDefaults.standard
+         
+        darkModeSelect.selectedSegmentIndex = plist.integer(forKey: "darkModeSelect")
+        if darkModeSelect.selectedSegmentIndex == 0 {
+            UIApplication.shared.windows.first?.overrideUserInterfaceStyle = UIUserInterfaceStyle.unspecified
+        } else if darkModeSelect.selectedSegmentIndex == 1 {
+            UIApplication.shared.windows.first?.overrideUserInterfaceStyle = UIUserInterfaceStyle.light
+        } else {
+            UIApplication.shared.windows.first?.overrideUserInterfaceStyle = UIUserInterfaceStyle.dark
+        }
+        let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        versionInfo.text = " \(appVersion!) Vesion"
+
     }
-
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+        
         return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        
         if section == 0 {
               return 3
           } else {
@@ -92,8 +103,9 @@ class SettingViewController: UITableViewController {
     }
     */
     @IBAction func darkModeSelect(_ sender: UISegmentedControl) {
-        if sender.selectedSegmentIndex == 0 {
+                if sender.selectedSegmentIndex == 0 {
                     UIApplication.shared.windows.first?.overrideUserInterfaceStyle = UIUserInterfaceStyle.unspecified
+                    
                 } else if sender.selectedSegmentIndex == 1 {
                     UIApplication.shared.windows.first?.overrideUserInterfaceStyle = UIUserInterfaceStyle.light
                  } else {
@@ -102,12 +114,15 @@ class SettingViewController: UITableViewController {
                 
                 let plist = UserDefaults.standard
                 let value = sender.selectedSegmentIndex
-                plist.set(value, forKey: "segMode")
+                plist.set(value, forKey: "darkModeSelect")
                 plist.synchronize()
         }
         
            
 
-       
+    @IBAction func backBtn(_ sender: UIBarButtonItem) {
+        _ = navigationController?.popViewController(animated: true)
+    }
+    
     
 }

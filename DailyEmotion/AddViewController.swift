@@ -39,17 +39,17 @@ class AddViewController: UIViewController {
     
     @IBAction func isBadButtonTapped(_ sender: Any) {
         isBad.isSelected = !isBad.isSelected
-                if isBad.isSelected {
-                    isSad.isSelected = !isBad.isSelected
-                    isUsually.isSelected = !isBad.isSelected
-                    isPleasure.isSelected = !isBad.isSelected
-                    isHappy.isSelected = !isBad.isSelected
-                }else {
-                    isSad.isSelected = isBad.isSelected
-                    isUsually.isSelected = isBad.isSelected
-                    isPleasure.isSelected = isBad.isSelected
-                    isHappy.isSelected = isBad.isSelected
-                }
+        if isBad.isSelected {
+            isSad.isSelected = !isBad.isSelected
+            isUsually.isSelected = !isBad.isSelected
+            isPleasure.isSelected = !isBad.isSelected
+            isHappy.isSelected = !isBad.isSelected
+        }else {
+            isSad.isSelected = isBad.isSelected
+            isUsually.isSelected = isBad.isSelected
+            isPleasure.isSelected = isBad.isSelected
+            isHappy.isSelected = isBad.isSelected
+        }
     }
     @IBAction func isSadButtonTapped(_ sender: Any) {
         isSad.isSelected = !isSad.isSelected
@@ -153,6 +153,12 @@ class AddViewController: UIViewController {
             
         }
     }
+    
+    
+    @IBAction func backBtn(_ sender: UIBarButtonItem) {
+        _ = navigationController?.popViewController(animated: true)
+    }
+    
 }
 
 
