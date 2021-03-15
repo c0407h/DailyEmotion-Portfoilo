@@ -522,7 +522,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zex-xN-TcZ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackTranslucent" id="8Pm-NC-WcD">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8Pm-NC-WcD">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
