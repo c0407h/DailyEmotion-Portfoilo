@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zex-xN-TcZ">
-    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -8,68 +8,125 @@
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Kyobo Handwriting 2019.otf">
+            <string>KyoboHandwriting2019</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--설정-->
+        <!--View Controller-->
+        <scene sceneID="xyY-Ie-ovC">
+            <objects>
+                <viewController id="5vf-pk-R9F" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hib-KJ-Ycu">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Source" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1EH-cq-aft">
+                                <rect key="frame" x="143.33333333333331" y="30" width="141.33333333333331" height="31.333333333333329"/>
+                                <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Font" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgp-Op-nm5">
+                                <rect key="frame" x="30" y="141.33333333333334" width="35" height="22"/>
+                                <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="교보손글씨" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIJ-gu-uPq">
+                                <rect key="frame" x="60" y="173.33333333333334" width="56" height="22"/>
+                                <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Library" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UX3-aL-XOL">
+                                <rect key="frame" x="30" y="263.33333333333331" width="54" height="22"/>
+                                <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SwipeCellKit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqq-yi-0mB">
+                                <rect key="frame" x="60" y="295.33333333333331" width="89" height="22"/>
+                                <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="https://github.com/SwipeCellKit/SwipeCellKit" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L43-Y7-vJL">
+                                <rect key="frame" x="80" y="322.33333333333331" width="338" height="19"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" link="YES" staticText="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="http://www.kyobobook.co.kr/prom/2020/general/200325_handwriting.jsp?orderClick=LCF" textAlignment="natural" lineBreakMode="clip" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Yj-tZ-PDA">
+                                <rect key="frame" x="80" y="200.33333333333334" width="338" height="37.666666666666657"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" link="YES" staticText="YES"/>
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="CRq-DO-5Ho"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" link="YES" staticText="YES"/>
+                        </accessibility>
+                        <constraints>
+                            <constraint firstItem="UX3-aL-XOL" firstAttribute="top" secondItem="xgp-Op-nm5" secondAttribute="bottom" constant="100" id="2dJ-bE-voY"/>
+                            <constraint firstItem="UX3-aL-XOL" firstAttribute="leading" secondItem="CRq-DO-5Ho" secondAttribute="leading" constant="30" id="4zM-es-eW0"/>
+                            <constraint firstItem="bqq-yi-0mB" firstAttribute="leading" secondItem="CRq-DO-5Ho" secondAttribute="leading" constant="60" id="Ecw-EV-Eib"/>
+                            <constraint firstItem="0Yj-tZ-PDA" firstAttribute="leading" secondItem="CRq-DO-5Ho" secondAttribute="leading" constant="80" id="FZN-9Q-cUm"/>
+                            <constraint firstItem="L43-Y7-vJL" firstAttribute="leading" secondItem="CRq-DO-5Ho" secondAttribute="leading" constant="80" id="Hda-xn-dX9"/>
+                            <constraint firstItem="bqq-yi-0mB" firstAttribute="top" secondItem="UX3-aL-XOL" secondAttribute="bottom" constant="10" id="Kyj-gU-SL4"/>
+                            <constraint firstItem="0Yj-tZ-PDA" firstAttribute="trailing" secondItem="CRq-DO-5Ho" secondAttribute="trailing" constant="-10" id="LK9-hX-lmt"/>
+                            <constraint firstItem="0Yj-tZ-PDA" firstAttribute="top" secondItem="KIJ-gu-uPq" secondAttribute="bottom" constant="5" id="OYh-F0-mr0"/>
+                            <constraint firstItem="KIJ-gu-uPq" firstAttribute="top" secondItem="xgp-Op-nm5" secondAttribute="bottom" constant="10" id="OnD-px-VR1"/>
+                            <constraint firstItem="1EH-cq-aft" firstAttribute="top" secondItem="Hib-KJ-Ycu" secondAttribute="top" constant="30" id="TaE-bE-b7T"/>
+                            <constraint firstItem="KIJ-gu-uPq" firstAttribute="leading" secondItem="CRq-DO-5Ho" secondAttribute="leading" constant="60" id="UcY-xD-ovm"/>
+                            <constraint firstItem="CRq-DO-5Ho" firstAttribute="trailing" secondItem="L43-Y7-vJL" secondAttribute="trailing" constant="10" id="ZaQ-zI-CBZ"/>
+                            <constraint firstItem="1EH-cq-aft" firstAttribute="centerX" secondItem="CRq-DO-5Ho" secondAttribute="centerX" id="h6m-lV-W5A"/>
+                            <constraint firstItem="xgp-Op-nm5" firstAttribute="leading" secondItem="CRq-DO-5Ho" secondAttribute="leading" constant="30" id="lDw-Yd-Eel"/>
+                            <constraint firstItem="L43-Y7-vJL" firstAttribute="top" secondItem="bqq-yi-0mB" secondAttribute="bottom" constant="5" id="lnm-BU-aLt"/>
+                            <constraint firstItem="xgp-Op-nm5" firstAttribute="top" secondItem="1EH-cq-aft" secondAttribute="bottom" constant="80" id="wqZ-XF-xre"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vqQ-ZZ-iNM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-911" y="2397"/>
+        </scene>
+        <!--Setting-->
         <scene sceneID="yNy-vI-4qO">
             <objects>
                 <tableViewController id="rpU-dP-rHb" customClass="SettingViewController" customModule="DailyEmotion" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="FtB-vb-Taw">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <sections>
                             <tableViewSection headerTitle="일반" id="I6s-l3-SOH">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="xgC-TR-Byz">
-                                        <rect key="frame" x="20" y="55.333332061767578" width="350" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xgC-TR-Byz" id="sy8-2r-JK2">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="테마" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4r-f4-NIf">
-                                                    <rect key="frame" x="20" y="12" width="30" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="M2O-Yh-hx9">
-                                        <rect key="frame" x="20" y="99" width="350" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="M2O-Yh-hx9" id="G7b-PD-jNj">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="글꼴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mik-lm-j5Y">
-                                                    <rect key="frame" x="20" y="11" width="30" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="9cx-j5-QSC">
-                                        <rect key="frame" x="20" y="142.66666793823242" width="350" height="43.666667938232422"/>
+                                        <rect key="frame" x="20" y="55.333332061767578" width="388" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9cx-j5-QSC" id="F1S-l4-g1c">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="388" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="다크모드" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OA6-5k-XdC">
-                                                    <rect key="frame" x="20" y="11" width="59" height="21"/>
+                                                    <rect key="frame" x="20" y="11" width="50" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kWh-XN-E7I">
-                                                    <rect key="frame" x="203" y="6" width="143" height="32"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kWh-XN-E7I">
+                                                    <rect key="frame" x="240" y="6.6666666666666679" width="143" height="32"/>
                                                     <segments>
                                                         <segment title="Auto"/>
                                                         <segment title="" image="sun.min" catalog="system"/>
@@ -80,6 +137,10 @@
                                                     </connections>
                                                 </segmentedControl>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="kWh-XN-E7I" firstAttribute="centerY" secondItem="F1S-l4-g1c" secondAttribute="centerY" id="G61-vp-v6y"/>
+                                                <constraint firstAttribute="trailing" secondItem="kWh-XN-E7I" secondAttribute="trailing" constant="5" id="Z3U-V5-dgn"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -87,36 +148,36 @@
                             <tableViewSection headerTitle="기타" id="0v6-Lb-nfM">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="fgL-XG-01p">
-                                        <rect key="frame" x="20" y="242.33333587646484" width="350" height="43.666667938232422"/>
+                                        <rect key="frame" x="20" y="155" width="388" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fgL-XG-01p" id="vTl-TZ-6pC">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="388" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J74-1l-isk">
-                                                    <rect key="frame" x="20" y="11" width="29" height="21"/>
+                                                    <rect key="frame" x="20" y="11" width="33" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="K9d-dr-aml" kind="presentation" id="esA-V1-PzY"/>
+                                            <segue destination="K9d-dr-aml" kind="show" id="esA-V1-PzY"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Vb3-lp-2ae">
-                                        <rect key="frame" x="20" y="286.00000381469727" width="350" height="43.666667938232422"/>
+                                        <rect key="frame" x="20" y="198.66666793823242" width="388" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vb3-lp-2ae" id="L5I-Sb-0ls">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="388" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Support" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytZ-fs-pHm">
-                                                    <rect key="frame" x="20" y="11" width="62" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Thanks To" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytZ-fs-pHm">
+                                                    <rect key="frame" x="20" y="11" width="74" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -127,28 +188,72 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="QfC-6i-qHf">
-                                        <rect key="frame" x="20" y="329.66667175292969" width="350" height="43.666667938232422"/>
+                                        <rect key="frame" x="20" y="242.33333587646484" width="388" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QfC-6i-qHf" id="sxp-5O-UJH">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="388" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="버전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8C-B1-R6r">
-                                                    <rect key="frame" x="20" y="11" width="30" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="리뷰쓰러가기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8C-B1-R6r">
+                                                    <rect key="frame" x="20" y="11" width="73" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVc-t5-JXb">
-                                                    <rect key="frame" x="143" y="11" width="187" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="amO-64-mmd">
+                                        <rect key="frame" x="20" y="286.00000381469727" width="388" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="amO-64-mmd" id="c7c-8o-xJU">
+                                            <rect key="frame" x="0.0" y="0.0" width="388" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="버전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BAL-ul-D39">
+                                                    <rect key="frame" x="20" y="11" width="24" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJA-TL-uI6">
+                                                    <rect key="frame" x="143" y="11" width="187" height="21"/>
+                                                    <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="aJA-TL-uI6" firstAttribute="centerY" secondItem="c7c-8o-xJU" secondAttribute="centerY" id="D2y-h3-oBc"/>
+                                                <constraint firstAttribute="trailing" secondItem="aJA-TL-uI6" secondAttribute="trailing" constant="5" id="qMD-NM-fST"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="support" id="04I-lp-wdy">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="PoX-7I-h3J">
+                                        <rect key="frame" x="20" y="385.66667175292969" width="388" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PoX-7I-h3J" id="bBY-xP-zOt">
+                                            <rect key="frame" x="0.0" y="0.0" width="388" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="오픈 소스 라이브러리 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUD-Wz-Ats">
+                                                    <rect key="frame" x="20" y="11" width="121" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="5vf-pk-R9F" kind="presentation" id="zrX-SK-AcZ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -158,7 +263,7 @@
                             <outlet property="delegate" destination="rpU-dP-rHb" id="riU-9F-yBG"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="설정" id="eog-ah-scO">
+                    <navigationItem key="navigationItem" title="Setting" id="eog-ah-scO">
                         <barButtonItem key="leftBarButtonItem" title="&lt; 설정" image="chevron.backward" catalog="system" id="qx2-b7-nWi">
                             <color key="tintColor" systemColor="labelColor"/>
                             <connections>
@@ -168,22 +273,43 @@
                     </navigationItem>
                     <connections>
                         <outlet property="darkModeSelect" destination="kWh-XN-E7I" id="eED-iA-2YE"/>
-                        <outlet property="versionInfo" destination="eVc-t5-JXb" id="wwa-TP-va5"/>
+                        <outlet property="versionInfo" destination="aJA-TL-uI6" id="CEt-Dz-X0l"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bmH-gP-q1N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1569" y="1638"/>
+            <point key="canvasLocation" x="-1580" y="1637"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hW4-yN-YTe">
             <objects>
                 <viewController id="YLL-1V-ng8" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="p3Z-gT-HFc">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Supporter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13l-dJ-hbp">
+                                <rect key="frame" x="160" y="30" width="108.33333333333331" height="31.333333333333329"/>
+                                <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인터넷 강의 패스트 캠퍼스 - 이준원 강사님 유투브 - 개발하는정대리  참고서적 스위프트로 아이폰 앱만들기 입문 - 이지스퍼블리싱 꼼꼼한재은씨의 Swift: 기본편 스위프트 프로그래밍: Swift5 " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8lq-7K-oXb">
+                                <rect key="frame" x="20" y="81.333333333333314" width="388" height="170"/>
+                                <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="xSS-Z0-Mbi"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8lq-7K-oXb" firstAttribute="top" secondItem="13l-dJ-hbp" secondAttribute="bottom" constant="20" id="8Pz-W2-1nA"/>
+                            <constraint firstItem="8lq-7K-oXb" firstAttribute="leading" secondItem="xSS-Z0-Mbi" secondAttribute="leading" constant="20" id="Hpe-oZ-0Ht"/>
+                            <constraint firstItem="8lq-7K-oXb" firstAttribute="trailing" secondItem="xSS-Z0-Mbi" secondAttribute="trailing" constant="-20" id="UaO-uU-qGS"/>
+                            <constraint firstItem="13l-dJ-hbp" firstAttribute="centerX" secondItem="xSS-Z0-Mbi" secondAttribute="centerX" id="gkb-Dd-Emb"/>
+                            <constraint firstItem="13l-dJ-hbp" firstAttribute="top" secondItem="xSS-Z0-Mbi" secondAttribute="top" constant="30" id="rYz-7H-y4T"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kyF-JI-aL5">
                         <barButtonItem key="leftBarButtonItem" image="chevron.backward" catalog="system" id="wWd-WN-peS">
@@ -193,59 +319,79 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="frK-ng-WAm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1243" y="2389"/>
+            <point key="canvasLocation" x="-1579" y="2397"/>
         </scene>
-        <!--View Controller-->
+        <!--Info-->
         <scene sceneID="MTS-hh-L9n">
             <objects>
-                <viewController id="K9d-dr-aml" sceneMemberID="viewController">
+                <viewController id="K9d-dr-aml" customClass="infoPagingViewController" customModule="DailyEmotion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Pf-CC-Me8">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rvq-P1-V0j">
-                                <rect key="frame" x="16" y="287" width="358" height="105.66666666666667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqJ-Xl-5Ae">
+                                <rect key="frame" x="20" y="103" width="388" height="106.33333333333331"/>
                                 <string key="text">내 기분, 감정 다른 사람에게 표현 할 수 없나요?
 혼자만 간직하고 싶은게 있나요?
-간단하게 모든 감정을 기록하고 
-힘들고 우울했던건 간단하고 쉽게 지워버리세요!</string>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="68V-9s-mm8">
-                                <rect key="frame" x="176" y="241" width="39" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+간단하게 모든 감정을 기록해서 좋았던 감정만 남기고 
+힘들고 우울했던건 쉽게 지워 잊어버리세요!</string>
+                                <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ccf-r4-Ch8">
+                                <rect key="frame" x="16" y="209.33333333333331" width="396" height="682.66666666666674"/>
+                            </imageView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="1GH-4I-Gx0">
+                                <rect key="frame" x="20" y="810" width="388" height="28"/>
+                                <connections>
+                                    <action selector="pageChange:" destination="K9d-dr-aml" eventType="valueChanged" id="SWF-aO-ZQG"/>
+                                </connections>
+                            </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xRH-pF-Bx6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xRH-pF-Bx6" firstAttribute="trailing" secondItem="Ccf-r4-Ch8" secondAttribute="trailing" constant="16" id="20m-fh-VDZ"/>
+                            <constraint firstItem="fqJ-Xl-5Ae" firstAttribute="top" secondItem="xRH-pF-Bx6" secondAttribute="top" constant="15" id="34b-S3-2Df"/>
+                            <constraint firstItem="xRH-pF-Bx6" firstAttribute="trailing" secondItem="fqJ-Xl-5Ae" secondAttribute="trailing" constant="20" id="8sx-lW-vD8"/>
+                            <constraint firstItem="Ccf-r4-Ch8" firstAttribute="top" secondItem="fqJ-Xl-5Ae" secondAttribute="bottom" id="EdM-FR-ZkD"/>
+                            <constraint firstItem="1GH-4I-Gx0" firstAttribute="bottom" secondItem="Ccf-r4-Ch8" secondAttribute="bottom" constant="20" id="GvL-bv-SKj"/>
+                            <constraint firstItem="1GH-4I-Gx0" firstAttribute="leading" secondItem="Ccf-r4-Ch8" secondAttribute="leading" id="UN7-2w-AX2"/>
+                            <constraint firstItem="Ccf-r4-Ch8" firstAttribute="leading" secondItem="xRH-pF-Bx6" secondAttribute="leading" constant="16" id="WvT-rZ-wMT"/>
+                            <constraint firstItem="1GH-4I-Gx0" firstAttribute="trailing" secondItem="Ccf-r4-Ch8" secondAttribute="trailing" id="axZ-Hl-Twx"/>
+                            <constraint firstItem="fqJ-Xl-5Ae" firstAttribute="centerX" secondItem="xRH-pF-Bx6" secondAttribute="centerX" id="blU-Px-TBp"/>
+                            <constraint firstItem="xRH-pF-Bx6" firstAttribute="bottom" secondItem="Ccf-r4-Ch8" secondAttribute="bottom" id="dDd-ZE-Z6b"/>
+                            <constraint firstItem="fqJ-Xl-5Ae" firstAttribute="leading" secondItem="xRH-pF-Bx6" secondAttribute="leading" constant="20" id="iZD-NY-v30"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Tr5-tR-zSJ">
+                    <navigationItem key="navigationItem" title="Info" id="Tr5-tR-zSJ">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.backward" catalog="system" id="Ynh-4e-hLE">
                             <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="backBtn:" destination="K9d-dr-aml" id="a6H-gR-Ip7"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="infoImgView" destination="Ccf-r4-Ch8" id="nTE-Of-2uY"/>
+                        <outlet property="pageControl" destination="1GH-4I-Gx0" id="gqJ-TA-v26"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="41R-x2-Ttk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1892" y="2389"/>
+            <point key="canvasLocation" x="-2228.9719626168221" y="2396.1123110151188"/>
         </scene>
-        <!--My Emotion-->
+        <!--Daily Emotion-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="EmotionViewController" customModule="DailyEmotion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Us8-i5-TLh">
-                                <rect key="frame" x="0.0" y="88" width="390" height="722"/>
+                                <rect key="frame" x="0.0" y="88" width="428" height="804"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hjs-lM-wGb">
                                     <size key="itemSize" width="390" height="90"/>
@@ -255,7 +401,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EmotionListCell" id="oXV-Gc-NzM" customClass="EmotionListCell" customModule="DailyEmotion" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="390" height="80"/>
+                                        <rect key="frame" x="19" y="50" width="390" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="28X-1K-MxT">
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="80"/>
@@ -263,9 +409,10 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕하슈 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MdX-fv-14e">
                                                     <rect key="frame" x="40" y="25" width="342" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <size key="shadowOffset" width="0.5" height="0.5"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🟥" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bd3-wq-Dxv">
                                                     <rect key="frame" x="10" y="29.666666666666671" width="23" height="21"/>
@@ -305,12 +452,12 @@
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EmotionListHeaderView" id="fhh-sk-zVS" customClass="EmotionListHeaderView" customModule="DailyEmotion" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="428" height="50"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRv-vP-aFV">
-                                            <rect key="frame" x="20" y="13" width="35" height="24"/>
-                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                            <rect key="frame" x="20" y="9.3333333333333339" width="31.333333333333329" height="31.333333333333329"/>
+                                            <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="25"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -328,12 +475,11 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="eMV-qG-vJ4"/>
                                 </connections>
                             </collectionView>
-                            <view contentMode="scaleToFill" id="uYF-cW-Uqs">
-                                <rect key="frame" x="338" y="723" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYF-cW-Uqs">
+                                <rect key="frame" x="368" y="772" width="40" height="40"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Lo-2x-wyj">
-                                        <rect key="frame" x="13" y="13" width="20" height="20"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Lo-2x-wyj">
+                                        <rect key="frame" x="11" y="-4" width="18" height="48"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="plus" catalog="system"/>
@@ -342,24 +488,28 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
-                                    <constraint firstItem="0Lo-2x-wyj" firstAttribute="centerX" secondItem="uYF-cW-Uqs" secondAttribute="centerX" id="nIS-E9-uNd"/>
-                                    <constraint firstItem="0Lo-2x-wyj" firstAttribute="centerY" secondItem="uYF-cW-Uqs" secondAttribute="centerY" id="uuP-2b-OeG"/>
+                                    <constraint firstAttribute="width" constant="40" id="Ec9-99-MCZ"/>
+                                    <constraint firstAttribute="height" constant="40" id="Vde-1a-4u1"/>
+                                    <constraint firstItem="0Lo-2x-wyj" firstAttribute="centerX" secondItem="uYF-cW-Uqs" secondAttribute="centerX" id="ZY9-JK-qHs"/>
+                                    <constraint firstItem="0Lo-2x-wyj" firstAttribute="centerY" secondItem="uYF-cW-Uqs" secondAttribute="centerY" id="kel-nG-jMG"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uYF-cW-Uqs" secondAttribute="bottom" constant="80" id="0jM-uF-SAN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Us8-i5-TLh" secondAttribute="trailing" id="4gE-Bq-ir3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Us8-i5-TLh" secondAttribute="bottom" id="Nqg-cP-xfw"/>
                             <constraint firstItem="Us8-i5-TLh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="maG-xc-NaH"/>
                             <constraint firstItem="Us8-i5-TLh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="nwV-lF-zNi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uYF-cW-Uqs" secondAttribute="trailing" constant="20" id="opV-2E-zFg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="My Emotion" id="oul-5q-0Hs">
-                        <barButtonItem key="leftBarButtonItem" title="settingItem" image="gearshape.fill" catalog="system" style="done" id="bS6-GQ-6cj">
+                    <navigationItem key="navigationItem" title="Daily Emotion" id="oul-5q-0Hs">
+                        <barButtonItem key="leftBarButtonItem" title="settingItem" image="gearshape.fill" catalog="system" style="plain" id="bS6-GQ-6cj">
                             <color key="tintColor" systemColor="labelColor"/>
                             <connections>
                                 <segue destination="rpU-dP-rHb" kind="show" identifier="sgSetting" id="A4E-Uh-hfB"/>
@@ -373,21 +523,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-689.23076923076917" y="903.55450236966817"/>
+            <point key="canvasLocation" x="-689.71962616822429" y="903.23974082073437"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--My Emotion-->
         <scene sceneID="OWh-y3-TYg">
             <objects>
                 <viewController id="tTS-ik-DKt" customClass="DetailViewController" customModule="DailyEmotion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5CY-8U-cOk">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="u7J-gs-odM">
-                                <rect key="frame" x="16" y="103" width="358" height="212"/>
+                                <rect key="frame" x="16" y="108" width="396" height="220"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="BHq-IX-Kb9"/>
+                                </constraints>
                                 <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -396,11 +549,11 @@
                         <constraints>
                             <constraint firstItem="u7J-gs-odM" firstAttribute="centerX" secondItem="5CY-8U-cOk" secondAttribute="centerX" id="G34-9X-ajY"/>
                             <constraint firstItem="u7J-gs-odM" firstAttribute="leading" secondItem="5CY-8U-cOk" secondAttribute="leading" constant="16" id="K3Z-MP-JAK"/>
-                            <constraint firstItem="u7J-gs-odM" firstAttribute="top" secondItem="p61-eL-foX" secondAttribute="top" constant="15" id="hHJ-gG-nNW"/>
-                            <constraint firstItem="p61-eL-foX" firstAttribute="bottom" secondItem="u7J-gs-odM" secondAttribute="bottom" constant="495" id="wbq-83-DFY"/>
+                            <constraint firstItem="p61-eL-foX" firstAttribute="trailing" secondItem="u7J-gs-odM" secondAttribute="trailing" constant="16" id="bS8-30-ecc"/>
+                            <constraint firstItem="u7J-gs-odM" firstAttribute="top" secondItem="p61-eL-foX" secondAttribute="top" constant="20" id="hHJ-gG-nNW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="W9j-uC-sp2">
+                    <navigationItem key="navigationItem" title="My Emotion" id="W9j-uC-sp2">
                         <barButtonItem key="leftBarButtonItem" image="chevron.backward" catalog="system" id="JgO-tD-W15">
                             <color key="tintColor" systemColor="labelColor"/>
                             <connections>
@@ -416,67 +569,26 @@
             </objects>
             <point key="canvasLocation" x="137" y="904"/>
         </scene>
-        <!--Add View Controller-->
+        <!--오늘은 어때요?-->
         <scene sceneID="dY7-CV-Xbq">
             <objects>
                 <viewController id="Mba-Dq-wg0" customClass="AddViewController" customModule="DailyEmotion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xhv-0g-W2k">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ceg-gS-AV1">
-                                <rect key="frame" x="334" y="110" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="행복">
-                                    <color key="titleColor" red="0.91980725529999996" green="0.132408269" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                                <connections>
-                                    <action selector="isHappyButtonTapped:" destination="Mba-Dq-wg0" eventType="touchUpInside" id="SXi-56-YcH"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRa-M7-BPl">
-                                <rect key="frame" x="31" y="110" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="우울">
-                                    <color key="titleColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="isBadButtonTapped:" destination="Mba-Dq-wg0" eventType="touchUpInside" id="DuQ-ia-M9J"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K55-kS-Fac">
-                                <rect key="frame" x="107" y="110" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="슬픔">
-                                    <color key="titleColor" systemColor="systemPurpleColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="isSadButtonTapped:" destination="Mba-Dq-wg0" eventType="touchUpInside" id="AP2-jo-sdG"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d19-Je-1jE">
-                                <rect key="frame" x="167" y="110" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="보통">
-                                    <color key="titleColor" systemColor="labelColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="isUsuallyButtonTapped:" destination="Mba-Dq-wg0" eventType="touchUpInside" id="YhC-yG-ThP"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVz-st-Nwq">
-                                <rect key="frame" x="257" y="110" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="기쁨">
-                                    <color key="titleColor" systemColor="systemGreenColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="isPleasureButtonTapped:" destination="Mba-Dq-wg0" eventType="touchUpInside" id="ejm-6G-VOv"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oCA-Aa-dOk">
-                                <rect key="frame" x="334" y="393" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fxg-sg-gLg">
+                                <rect key="frame" x="16" y="162" width="396" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="A55-p9-0O6"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oCA-Aa-dOk">
+                                <rect key="frame" x="378" y="402" width="30" height="34"/>
+                                <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="등록">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -485,18 +597,77 @@
                                     <action selector="addBtn:" destination="Mba-Dq-wg0" eventType="touchUpInside" id="A1t-k3-M8e"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fxg-sg-gLg">
-                                <rect key="frame" x="16" y="185" width="358" height="179"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="I8b-rH-Qc8">
+                                <rect key="frame" x="16" y="108" width="396" height="34"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRa-M7-BPl">
+                                        <rect key="frame" x="0.0" y="0.0" width="79.333333333333329" height="34"/>
+                                        <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
+                                        <state key="normal" title="우울">
+                                            <color key="titleColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="isBadButtonTapped:" destination="Mba-Dq-wg0" eventType="touchUpInside" id="DuQ-ia-M9J"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K55-kS-Fac">
+                                        <rect key="frame" x="79.333333333333329" y="0.0" width="78.999999999999986" height="34"/>
+                                        <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
+                                        <state key="normal" title="슬픔">
+                                            <color key="titleColor" systemColor="systemPurpleColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="isSadButtonTapped:" destination="Mba-Dq-wg0" eventType="touchUpInside" id="AP2-jo-sdG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d19-Je-1jE">
+                                        <rect key="frame" x="158.33333333333334" y="0.0" width="79.333333333333343" height="34"/>
+                                        <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
+                                        <state key="normal" title="보통">
+                                            <color key="titleColor" systemColor="labelColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="isUsuallyButtonTapped:" destination="Mba-Dq-wg0" eventType="touchUpInside" id="YhC-yG-ThP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ceg-gS-AV1">
+                                        <rect key="frame" x="237.66666666666663" y="0.0" width="79" height="34"/>
+                                        <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
+                                        <state key="normal" title="기쁨">
+                                            <color key="titleColor" systemColor="systemGreenColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="isHappyButtonTapped:" destination="Mba-Dq-wg0" eventType="touchUpInside" id="SXi-56-YcH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVz-st-Nwq">
+                                        <rect key="frame" x="316.66666666666669" y="0.0" width="79.333333333333314" height="34"/>
+                                        <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
+                                        <state key="normal" title="행복">
+                                            <color key="titleColor" red="0.94536799192428589" green="0.15533861517906189" blue="0.11365344375371933" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="isPleasureButtonTapped:" destination="Mba-Dq-wg0" eventType="touchUpInside" id="ejm-6G-VOv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="03f-QP-oz2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oCA-Aa-dOk" firstAttribute="top" secondItem="fxg-sg-gLg" secondAttribute="bottom" constant="20" id="3Gw-ny-lfa"/>
+                            <constraint firstItem="I8b-rH-Qc8" firstAttribute="leading" secondItem="03f-QP-oz2" secondAttribute="leading" constant="16" id="D2V-1a-ZAH"/>
+                            <constraint firstItem="fxg-sg-gLg" firstAttribute="top" secondItem="I8b-rH-Qc8" secondAttribute="bottom" constant="20" id="Ivj-Tp-Sbt"/>
+                            <constraint firstItem="03f-QP-oz2" firstAttribute="trailing" secondItem="fxg-sg-gLg" secondAttribute="trailing" constant="16" id="Qiw-AS-8E3"/>
+                            <constraint firstItem="03f-QP-oz2" firstAttribute="trailing" secondItem="I8b-rH-Qc8" secondAttribute="trailing" constant="16" id="TD7-I9-RWs"/>
+                            <constraint firstItem="I8b-rH-Qc8" firstAttribute="top" secondItem="03f-QP-oz2" secondAttribute="top" constant="20" id="nkg-bN-7nP"/>
+                            <constraint firstItem="fxg-sg-gLg" firstAttribute="leading" secondItem="03f-QP-oz2" secondAttribute="leading" constant="16" id="nmX-gb-EJO"/>
+                            <constraint firstItem="fxg-sg-gLg" firstAttribute="centerX" secondItem="03f-QP-oz2" secondAttribute="centerX" id="osp-dw-HwA"/>
+                            <constraint firstItem="03f-QP-oz2" firstAttribute="trailing" secondItem="oCA-Aa-dOk" secondAttribute="trailing" constant="20" id="wob-ev-58S"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Crn-K0-vZA">
+                    <navigationItem key="navigationItem" title="오늘은 어때요?" id="Crn-K0-vZA">
                         <barButtonItem key="leftBarButtonItem" image="chevron.backward" catalog="system" id="0iE-kt-OfH">
                             <color key="tintColor" systemColor="labelColor"/>
                             <connections>
@@ -515,7 +686,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Chk-nz-iv3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="197" y="1638"/>
+            <point key="canvasLocation" x="136" y="1637"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4Ze-pI-OdR">
@@ -523,10 +694,10 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zex-xN-TcZ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8Pm-NC-WcD">
-                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" type="italicSystem" pointSize="21"/>
+                            <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="21"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -548,9 +719,6 @@
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -559,6 +727,9 @@
         </systemColor>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -22,11 +22,13 @@ class SettingViewController: UITableViewController {
         darkModeSelect.selectedSegmentIndex = plist.integer(forKey: "darkModeSelect")
         if darkModeSelect.selectedSegmentIndex == 0 {
             UIApplication.shared.windows.first?.overrideUserInterfaceStyle = UIUserInterfaceStyle.unspecified
+
         } else if darkModeSelect.selectedSegmentIndex == 1 {
             UIApplication.shared.windows.first?.overrideUserInterfaceStyle = UIUserInterfaceStyle.light
         } else {
             UIApplication.shared.windows.first?.overrideUserInterfaceStyle = UIUserInterfaceStyle.dark
         }
+        
         let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
         versionInfo.text = " \(appVersion!) Vesion"
 
@@ -36,15 +38,20 @@ class SettingViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         
-        return 2
+        return 3
     }
 
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if section == 0 {
-              return 3
+              return 1
+          } else if section == 1 {
+              return 4
+          } else if section == 2{
+            return 1
           } else {
-              return 3
+            return 0
           }
     }
 
@@ -105,12 +112,12 @@ class SettingViewController: UITableViewController {
     @IBAction func darkModeSelect(_ sender: UISegmentedControl) {
                 if sender.selectedSegmentIndex == 0 {
                     UIApplication.shared.windows.first?.overrideUserInterfaceStyle = UIUserInterfaceStyle.unspecified
-                    
                 } else if sender.selectedSegmentIndex == 1 {
                     UIApplication.shared.windows.first?.overrideUserInterfaceStyle = UIUserInterfaceStyle.light
                  } else {
                     UIApplication.shared.windows.first?.overrideUserInterfaceStyle = UIUserInterfaceStyle.dark
                 }
+   
                 
                 let plist = UserDefaults.standard
                 let value = sender.selectedSegmentIndex

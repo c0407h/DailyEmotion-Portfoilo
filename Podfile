@@ -7,9 +7,8 @@ target 'DailyEmotion' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  pod 'SwipeCellKit', :git => 'https://github.com/SwipeCellKit/SwipeCellKit.git', :branch => 'develop'
-
-
   # Pods for DailyEmotion
 
+pod 'SwipeCellKit'
+pod 'Google-Mobile-Ads-SDK'
 end

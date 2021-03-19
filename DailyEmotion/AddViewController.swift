@@ -14,7 +14,6 @@ class AddViewController: UIViewController {
     @IBOutlet var isUsually: UIButton!
     @IBOutlet var isPleasure: UIButton!
     @IBOutlet var isHappy: UIButton!
-    
     @IBOutlet var addTextView: UITextView!
     
     let date = Date()

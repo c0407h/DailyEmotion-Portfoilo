@@ -7,16 +7,17 @@
 
 import UIKit
 import SwipeCellKit
+import GoogleMobileAds
 
-
-
-class EmotionViewController: UIViewController, SwipeCollectionViewCellDelegate{
+class EmotionViewController: UIViewController, SwipeCollectionViewCellDelegate, GADBannerViewDelegate{
+    
+    var bannerView: GADBannerView!
     
     func collectionView(_ collectionView: UICollectionView, editActionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
 
         guard orientation == .right else { return nil }
 
-         let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
+         let deleteAction = SwipeAction(style: .destructive, title: "삭제") { action, indexPath in
             
             (self.collectionView.cellForItem(at: indexPath) as? EmotionListCell)?.deleteButtonTapHandler?()
          
@@ -24,6 +25,7 @@ class EmotionViewController: UIViewController, SwipeCollectionViewCellDelegate{
           deleteAction.image = UIImage(named: "delete")
 
          return [deleteAction]
+       
     }
     
     
@@ -38,21 +40,33 @@ class EmotionViewController: UIViewController, SwipeCollectionViewCellDelegate{
         
         addBtnView.layer.cornerRadius = addBtnView.frame.width / 2
         addBtnView.layer.cornerRadius = addBtnView.frame.height / 2
+        addBtnView.layer.shadowOpacity = 1
+        addBtnView.layer.shadowOffset = CGSize(width: 3, height: 3)
+        addBtnView.layer.shadowRadius = 10
+        addBtnView.layer.masksToBounds = false
+        addBtnView.layer.shadowColor = UIColor.systemGray2.cgColor
+
         
-        let plist = UserDefaults.standard
-        let darkModeSelect = plist.integer(forKey: "darkModeSelect")
-        
-        if darkModeSelect == 0 {
-            UIApplication.shared.windows.forEach { window in
-                window.overrideUserInterfaceStyle = .unspecified
+        DispatchQueue.main.async {
+            let plist = UserDefaults.standard
+            let darkModeSelect = plist.integer(forKey: "darkModeSelect")
+            
+            if darkModeSelect == 0 {
+                UIApplication.shared.windows.forEach { window in
+                    window.overrideUserInterfaceStyle = .unspecified
+                    self.addBtnView.layer.shadowColor = UIColor.systemGray2.cgColor
                 }
-        } else if darkModeSelect == 1 {
-            UIApplication.shared.windows.forEach { window in
-                window.overrideUserInterfaceStyle = .light
-            }
-        } else {
-            UIApplication.shared.windows.forEach { window in
-                window.overrideUserInterfaceStyle = .dark
+            } else if darkModeSelect == 1 {
+                UIApplication.shared.windows.forEach { window in
+                    window.overrideUserInterfaceStyle = .light
+                    self.addBtnView.layer.shadowColor = UIColor.systemGray2.cgColor
+                }
+            } else {
+                UIApplication.shared.windows.forEach { window in
+                    window.overrideUserInterfaceStyle = .dark
+                    self.addBtnView.layer.shadowColor = UIColor.systemGray2.cgColor
+
+                }
             }
         }
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
@@ -61,12 +75,24 @@ class EmotionViewController: UIViewController, SwipeCollectionViewCellDelegate{
                     print("Not first launch.")
                 }
                 else
-                {
+                { 
                     print("First launch")
                     UserDefaults.standard.set(true, forKey: "launchedBefore")
                     
                 }
         emotionListViewModel.loadTasks()
+
+        //배너 사이즈 설정
+        bannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
+        // 화면에 배너뷰 추가
+        addBannerViewToView(bannerView)
+        //광고단위 아이디
+        bannerView.adUnitID = "ca-app-pub-1400043170071998/2257879909"
+
+        bannerView.rootViewController = self
+        //광고로드
+        bannerView.load(GADRequest())
+        bannerView.delegate = self
     }
     
     
@@ -75,9 +101,29 @@ class EmotionViewController: UIViewController, SwipeCollectionViewCellDelegate{
         collectionView.reloadData()
         
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//    }
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+        //오토레이아웃으로 뷰를 설정
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        //루트뷰에 배너를 추가
+        view.addSubview(bannerView)
+        //앵커설정하여 토레이아웃 설정
+        view.addConstraints(
+          [NSLayoutConstraint(item: bannerView,
+                              attribute: .bottom,
+                              relatedBy: .equal,
+                              toItem: bottomLayoutGuide,
+                              attribute: .top,
+                              multiplier: 1,
+                              constant: 0),
+           NSLayoutConstraint(item: bannerView,
+                              attribute: .centerX,
+                              relatedBy: .equal,
+                              toItem: view,
+                              attribute: .centerX,
+                              multiplier: 1,
+                              constant: 0)
+          ])
+       }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let nextViewController = segue.destination as? DetailViewController else {
@@ -89,19 +135,47 @@ class EmotionViewController: UIViewController, SwipeCollectionViewCellDelegate{
             return
         }
         
-        //for id in indexp! {
         var cc = (collectionView.cellForItem(at: indexp![0]) as? EmotionListCell)
         nextViewController.detailViewText = cc?.descriptionLabel.text
-        //}
-        
-        
-//
-//        selectedCell = collectionView.cellForItem(at: indexp) as? EmotionListCell
-//
-//
-//        nextViewController.detailViewText = selectedCell?.descriptionLabel.text
+
         
     }
+    
+    //MARK: - GADBannerViewDelegate
+    /// Tells the delegate an ad request loaded an ad.
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+ 
+      print("adViewDidReceiveAd")
+    }
+
+    /// Tells the delegate an ad request failed.
+    func adView(_ bannerView: GADBannerView,
+        didFailToReceiveAdWithError error: NSError) {
+      print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+    }
+
+    /// Tells the delegate that a full-screen view will be presented in response
+    /// to the user clicking on an ad.
+    func adViewWillPresentScreen(_ bannerView: GADBannerView) {
+      print("adViewWillPresentScreen")
+    }
+
+    /// Tells the delegate that the full-screen view will be dismissed.
+    func adViewWillDismissScreen(_ bannerView: GADBannerView) {
+      print("adViewWillDismissScreen")
+    }
+
+    /// Tells the delegate that the full-screen view has been dismissed.
+    func adViewDidDismissScreen(_ bannerView: GADBannerView) {
+      print("adViewDidDismissScreen")
+    }
+
+    /// Tells the delegate that a user click will open another app (such as
+    /// the App Store), backgrounding the current app.
+    func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
+      print("adViewWillLeaveApplication")
+    }
+
     
     
 }
@@ -192,8 +266,6 @@ class EmotionListCell: SwipeCollectionViewCell {
     
     var deleteButtonTapHandler: (() -> Void)?
     
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         reset()
@@ -203,41 +275,37 @@ class EmotionListCell: SwipeCollectionViewCell {
         super.prepareForReuse()
         reset()
     }
-
     
     func updateUI(emotion: Emotion) {
         
         descriptionLabel.text = emotion.detail
         dateLabel.text = emotion.isToday
         
-        
         if emotion.isSad {
-            myEmotion.text = "🟪"
+            myEmotion.text = "😥"
+            descriptionLabel.shadowColor = .systemPurple
         } else if emotion.isBad{
-            myEmotion.text = "🟦"
+            myEmotion.text = "😔"
+            descriptionLabel.shadowColor = .systemBlue
         } else if emotion.isUsually{
-            myEmotion.text = "⬛️"
+            myEmotion.text = "😶"
+            descriptionLabel.shadowColor = .systemFill
+            
         } else if emotion.isPleasure{
-            myEmotion.text = "🟩"
+            myEmotion.text = "😍"
+            descriptionLabel.shadowColor = .systemRed
         } else if emotion.isHappy{
-            myEmotion.text = "🟥"
+            myEmotion.text = "😁"
+            descriptionLabel.shadowColor = .systemGreen
         }else {
-            myEmotion.text = "⬛️"
+            myEmotion.text = "😶"
+            descriptionLabel.shadowColor = .systemFill
         }
     }
     
-    
     func reset() {
         descriptionLabel.alpha = 1
-//        deleteButton.isHidden = true
     }
-//    @IBAction func deleteButtonTapped(_ sender: Any) {
-//        print("삭제가되나요")
-//        //여기 얼럿을 띄워 삭제할건지 물어보기
-//
-//        deleteButtonTapHandler?()
-//    }
-
     
 }
 // MARK - SwipeCollectionViewCellDelegate
@@ -249,7 +317,6 @@ extension EmotionListCell: SwipeCollectionViewCellDelegate{
          
             
          }
-
          // customize the action appearance
          deleteAction.image = UIImage(named: "delete")
         
@@ -263,8 +330,6 @@ extension EmotionListCell: SwipeCollectionViewCellDelegate{
         options.transitionStyle = .drag
         return options
     }
-    
-    
 
 }
 

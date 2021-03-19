@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C93E211F4E1598E5229F18F /* Pods_DailyEmotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAC6C1EC10B1D329D287B8C0 /* Pods_DailyEmotion.framework */; };
 		5733C02C25FCDD6600DA9110 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5733C02B25FCDD6600DA9110 /* SettingViewController.swift */; };
 		5733C02F25FCF7E200DA9110 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5733C02E25FCF7E200DA9110 /* DetailViewController.swift */; };
 		57404B6725F64A57000A5EFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57404B6625F64A57000A5EFF /* AppDelegate.swift */; };
@@ -17,12 +18,20 @@
 		57404B7C25F65084000A5EFF /* EmotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57404B7B25F65084000A5EFF /* EmotionViewController.swift */; };
 		57404B8725F66589000A5EFF /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57404B8625F66589000A5EFF /* Emotion.swift */; };
 		57404B8A25F66593000A5EFF /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57404B8925F66593000A5EFF /* Storage.swift */; };
+		579105A02603621F004CC880 /* EmotionDiaryAppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5791059F2603621F004CC880 /* EmotionDiaryAppIcon.png */; };
+		579105A52603AC84004CC880 /* infoPagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579105A42603AC84004CC880 /* infoPagingViewController.swift */; };
+		579105AB2603ADA1004CC880 /* 02.png in Resources */ = {isa = PBXBuildFile; fileRef = 579105A72603ADA0004CC880 /* 02.png */; };
+		579105AC2603ADA1004CC880 /* 03.png in Resources */ = {isa = PBXBuildFile; fileRef = 579105A82603ADA0004CC880 /* 03.png */; };
+		579105AD2603ADA1004CC880 /* 04.png in Resources */ = {isa = PBXBuildFile; fileRef = 579105A92603ADA1004CC880 /* 04.png */; };
+		579105AE2603ADA1004CC880 /* 01.png in Resources */ = {isa = PBXBuildFile; fileRef = 579105AA2603ADA1004CC880 /* 01.png */; };
+		57D2D91026011C0F00116990 /* Kyobo Handwriting 2019.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57D2D90F26011C0000116990 /* Kyobo Handwriting 2019.otf */; };
+		57D2D91226011C1100116990 /* MapoFlowerIsland.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57D2D90E26011C0000116990 /* MapoFlowerIsland.otf */; };
+		57D2D91426011C1400116990 /* TmoneyRoundWindExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57D2D90D26011C0000116990 /* TmoneyRoundWindExtraBold.otf */; };
 		57F0139625F7275D0078E44C /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F0139525F7275D0078E44C /* AddViewController.swift */; };
-		C71352EB13F05BD7B80DA82C /* Pods_DailyEmotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DB411375E6D706EC5A0D27 /* Pods_DailyEmotion.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		49DB411375E6D706EC5A0D27 /* Pods_DailyEmotion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyEmotion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FB4FBC14B8586E4626766DC /* Pods-DailyEmotion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyEmotion.release.xcconfig"; path = "Target Support Files/Pods-DailyEmotion/Pods-DailyEmotion.release.xcconfig"; sourceTree = "<group>"; };
 		5733C02B25FCDD6600DA9110 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		5733C02E25FCF7E200DA9110 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		57404B6325F64A57000A5EFF /* DailyEmotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyEmotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,9 +44,18 @@
 		57404B7B25F65084000A5EFF /* EmotionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionViewController.swift; sourceTree = "<group>"; };
 		57404B8625F66589000A5EFF /* Emotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
 		57404B8925F66593000A5EFF /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		5791059F2603621F004CC880 /* EmotionDiaryAppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EmotionDiaryAppIcon.png; sourceTree = "<group>"; };
+		579105A42603AC84004CC880 /* infoPagingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = infoPagingViewController.swift; sourceTree = "<group>"; };
+		579105A72603ADA0004CC880 /* 02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 02.png; sourceTree = "<group>"; };
+		579105A82603ADA0004CC880 /* 03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 03.png; sourceTree = "<group>"; };
+		579105A92603ADA1004CC880 /* 04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 04.png; sourceTree = "<group>"; };
+		579105AA2603ADA1004CC880 /* 01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 01.png; sourceTree = "<group>"; };
+		57D2D90D26011C0000116990 /* TmoneyRoundWindExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TmoneyRoundWindExtraBold.otf; sourceTree = "<group>"; };
+		57D2D90E26011C0000116990 /* MapoFlowerIsland.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MapoFlowerIsland.otf; sourceTree = "<group>"; };
+		57D2D90F26011C0000116990 /* Kyobo Handwriting 2019.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kyobo Handwriting 2019.otf"; sourceTree = "<group>"; };
 		57F0139525F7275D0078E44C /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
-		D45F4BFAAAFC5BA46807DF7B /* Pods-DailyEmotion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyEmotion.debug.xcconfig"; path = "Target Support Files/Pods-DailyEmotion/Pods-DailyEmotion.debug.xcconfig"; sourceTree = "<group>"; };
-		F5FE461572EC2E18BB9B66D2 /* Pods-DailyEmotion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyEmotion.release.xcconfig"; path = "Target Support Files/Pods-DailyEmotion/Pods-DailyEmotion.release.xcconfig"; sourceTree = "<group>"; };
+		72C4B49B0233C68D4340DB35 /* Pods-DailyEmotion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyEmotion.debug.xcconfig"; path = "Target Support Files/Pods-DailyEmotion/Pods-DailyEmotion.debug.xcconfig"; sourceTree = "<group>"; };
+		EAC6C1EC10B1D329D287B8C0 /* Pods_DailyEmotion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyEmotion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C71352EB13F05BD7B80DA82C /* Pods_DailyEmotion.framework in Frameworks */,
+				4C93E211F4E1598E5229F18F /* Pods_DailyEmotion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,8 +73,8 @@
 		1420625A0B20338DB2E26CD9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D45F4BFAAAFC5BA46807DF7B /* Pods-DailyEmotion.debug.xcconfig */,
-				F5FE461572EC2E18BB9B66D2 /* Pods-DailyEmotion.release.xcconfig */,
+				72C4B49B0233C68D4340DB35 /* Pods-DailyEmotion.debug.xcconfig */,
+				4FB4FBC14B8586E4626766DC /* Pods-DailyEmotion.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -67,7 +85,7 @@
 				57404B6525F64A57000A5EFF /* DailyEmotion */,
 				57404B6425F64A57000A5EFF /* Products */,
 				1420625A0B20338DB2E26CD9 /* Pods */,
-				D31860633245553AEC1649C7 /* Frameworks */,
+				5AC3E10F609D5D604D2562A4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +100,8 @@
 		57404B6525F64A57000A5EFF /* DailyEmotion */ = {
 			isa = PBXGroup;
 			children = (
+				579105A22603AC64004CC880 /* infoImage */,
+				57D2D90C26011A4A00116990 /* Font */,
 				57404B6625F64A57000A5EFF /* AppDelegate.swift */,
 				57404B6825F64A57000A5EFF /* SceneDelegate.swift */,
 				57404B6C25F64A57000A5EFF /* Main.storyboard */,
@@ -93,15 +113,38 @@
 				57404B8925F66593000A5EFF /* Storage.swift */,
 				57404B6F25F64A59000A5EFF /* Assets.xcassets */,
 				57404B7125F64A59000A5EFF /* LaunchScreen.storyboard */,
+				5791059F2603621F004CC880 /* EmotionDiaryAppIcon.png */,
 				57404B7425F64A59000A5EFF /* Info.plist */,
+				579105A42603AC84004CC880 /* infoPagingViewController.swift */,
 			);
 			path = DailyEmotion;
 			sourceTree = "<group>";
 		};
-		D31860633245553AEC1649C7 /* Frameworks */ = {
+		579105A22603AC64004CC880 /* infoImage */ = {
 			isa = PBXGroup;
 			children = (
-				49DB411375E6D706EC5A0D27 /* Pods_DailyEmotion.framework */,
+				579105AA2603ADA1004CC880 /* 01.png */,
+				579105A72603ADA0004CC880 /* 02.png */,
+				579105A82603ADA0004CC880 /* 03.png */,
+				579105A92603ADA1004CC880 /* 04.png */,
+			);
+			path = infoImage;
+			sourceTree = "<group>";
+		};
+		57D2D90C26011A4A00116990 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				57D2D90F26011C0000116990 /* Kyobo Handwriting 2019.otf */,
+				57D2D90E26011C0000116990 /* MapoFlowerIsland.otf */,
+				57D2D90D26011C0000116990 /* TmoneyRoundWindExtraBold.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		5AC3E10F609D5D604D2562A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EAC6C1EC10B1D329D287B8C0 /* Pods_DailyEmotion.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -113,11 +156,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 57404B7725F64A59000A5EFF /* Build configuration list for PBXNativeTarget "DailyEmotion" */;
 			buildPhases = (
-				AE8A2239EC9C2DB4634FE66B /* [CP] Check Pods Manifest.lock */,
+				EBE50C034DBAD16E516CB880 /* [CP] Check Pods Manifest.lock */,
 				57404B5F25F64A57000A5EFF /* Sources */,
 				57404B6025F64A57000A5EFF /* Frameworks */,
 				57404B6125F64A57000A5EFF /* Resources */,
-				CF5343B11875E36BCCF374F5 /* [CP] Embed Pods Frameworks */,
+				1553A2A4D72133FFFFDDD89E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -165,16 +208,41 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57D2D91026011C0F00116990 /* Kyobo Handwriting 2019.otf in Resources */,
+				579105AE2603ADA1004CC880 /* 01.png in Resources */,
 				57404B7325F64A59000A5EFF /* LaunchScreen.storyboard in Resources */,
+				57D2D91426011C1400116990 /* TmoneyRoundWindExtraBold.otf in Resources */,
+				579105AB2603ADA1004CC880 /* 02.png in Resources */,
 				57404B7025F64A59000A5EFF /* Assets.xcassets in Resources */,
+				579105AD2603ADA1004CC880 /* 04.png in Resources */,
+				57D2D91226011C1100116990 /* MapoFlowerIsland.otf in Resources */,
 				57404B6E25F64A57000A5EFF /* Main.storyboard in Resources */,
+				579105AC2603ADA1004CC880 /* 03.png in Resources */,
+				579105A02603621F004CC880 /* EmotionDiaryAppIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		AE8A2239EC9C2DB4634FE66B /* [CP] Check Pods Manifest.lock */ = {
+		1553A2A4D72133FFFFDDD89E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DailyEmotion/Pods-DailyEmotion-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DailyEmotion/Pods-DailyEmotion-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DailyEmotion/Pods-DailyEmotion-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EBE50C034DBAD16E516CB880 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -196,23 +264,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CF5343B11875E36BCCF374F5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DailyEmotion/Pods-DailyEmotion-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DailyEmotion/Pods-DailyEmotion-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DailyEmotion/Pods-DailyEmotion-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -227,6 +278,7 @@
 				57404B6925F64A57000A5EFF /* SceneDelegate.swift in Sources */,
 				5733C02C25FCDD6600DA9110 /* SettingViewController.swift in Sources */,
 				57404B8A25F66593000A5EFF /* Storage.swift in Sources */,
+				579105A52603AC84004CC880 /* infoPagingViewController.swift in Sources */,
 				5733C02F25FCF7E200DA9110 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,7 +423,7 @@
 		};
 		57404B7825F64A59000A5EFF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D45F4BFAAAFC5BA46807DF7B /* Pods-DailyEmotion.debug.xcconfig */;
+			baseConfigurationReference = 72C4B49B0233C68D4340DB35 /* Pods-DailyEmotion.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -391,7 +443,7 @@
 		};
 		57404B7925F64A59000A5EFF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F5FE461572EC2E18BB9B66D2 /* Pods-DailyEmotion.release.xcconfig */;
+			baseConfigurationReference = 4FB4FBC14B8586E4626766DC /* Pods-DailyEmotion.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -402,6 +454,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.chung.DailyEmotion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
