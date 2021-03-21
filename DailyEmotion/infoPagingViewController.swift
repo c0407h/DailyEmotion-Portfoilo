@@ -24,6 +24,7 @@ class infoPagingViewController: UIViewController {
         pageControl.currentPageIndicatorTintColor = UIColor.white
         
         infoImgView.image = UIImage(named:  images[0])
+        
 
         
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(infoPagingViewController.respondToSwipeGesture(_:)))
@@ -33,7 +34,10 @@ class infoPagingViewController: UIViewController {
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(infoPagingViewController.respondToSwipeGesture(_:)))
         swipeRight.direction = UISwipeGestureRecognizer.Direction.right
         self.view.addGestureRecognizer(swipeRight)
+        
+        
     }
+    
     
 
     /*

@@ -23,37 +23,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Source" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1EH-cq-aft">
-                                <rect key="frame" x="143.33333333333331" y="30" width="141.33333333333331" height="31.333333333333329"/>
+                                <rect key="frame" x="140.33333333333331" y="30" width="147.33333333333331" height="29.333333333333329"/>
                                 <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Font" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgp-Op-nm5">
-                                <rect key="frame" x="30" y="141.33333333333334" width="35" height="22"/>
+                                <rect key="frame" x="30" y="139.33333333333334" width="35" height="20"/>
                                 <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="교보손글씨" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIJ-gu-uPq">
-                                <rect key="frame" x="60" y="173.33333333333334" width="56" height="22"/>
+                                <rect key="frame" x="60.000000000000007" y="169.33333333333334" width="73.666666666666686" height="20"/>
                                 <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Library" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UX3-aL-XOL">
-                                <rect key="frame" x="30" y="263.33333333333331" width="54" height="22"/>
+                                <rect key="frame" x="30.000000000000004" y="259.33333333333331" width="52.333333333333343" height="20"/>
                                 <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SwipeCellKit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqq-yi-0mB">
-                                <rect key="frame" x="60" y="295.33333333333331" width="89" height="22"/>
+                                <rect key="frame" x="59.999999999999993" y="289.33333333333331" width="96.333333333333314" height="20"/>
                                 <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="https://github.com/SwipeCellKit/SwipeCellKit" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L43-Y7-vJL">
-                                <rect key="frame" x="80" y="322.33333333333331" width="338" height="19"/>
+                                <rect key="frame" x="80" y="314.33333333333331" width="338" height="17.666666666666686"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" link="YES" staticText="YES"/>
                                 </accessibility>
@@ -62,7 +62,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="http://www.kyobobook.co.kr/prom/2020/general/200325_handwriting.jsp?orderClick=LCF" textAlignment="natural" lineBreakMode="clip" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Yj-tZ-PDA">
-                                <rect key="frame" x="80" y="200.33333333333334" width="338" height="37.666666666666657"/>
+                                <rect key="frame" x="80" y="194.33333333333334" width="338" height="35"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" link="YES" staticText="YES"/>
                                     <bool key="isElement" value="YES"/>
@@ -289,13 +289,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Supporter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13l-dJ-hbp">
-                                <rect key="frame" x="160" y="30" width="108.33333333333331" height="31.333333333333329"/>
+                                <rect key="frame" x="158" y="30" width="112.33333333333331" height="29.333333333333329"/>
                                 <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인터넷 강의 패스트 캠퍼스 - 이준원 강사님 유투브 - 개발하는정대리  참고서적 스위프트로 아이폰 앱만들기 입문 - 이지스퍼블리싱 꼼꼼한재은씨의 Swift: 기본편 스위프트 프로그래밍: Swift5 " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8lq-7K-oXb">
-                                <rect key="frame" x="20" y="81.333333333333314" width="388" height="170"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8lq-7K-oXb">
+                                <rect key="frame" x="20" y="79.333333333333329" width="388" height="198.33333333333337"/>
+                                <string key="text">인터넷 강의 패스트 캠퍼스 - 이준원 강사님 유투브 - 개발하는정대리  참고서적 스위프트로 아이폰 앱만들기 입문 - 이지스퍼블리싱 꼼꼼한재은씨의 Swift: 기본편 꼼꼼한재은씨의 Swift: 실전편 스위프트 프로그래밍: Swift5  
+</string>
                                 <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -330,7 +332,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqJ-Xl-5Ae">
-                                <rect key="frame" x="20" y="103" width="388" height="106.33333333333331"/>
+                                <rect key="frame" x="20" y="103" width="388" height="99.333333333333314"/>
                                 <string key="text">내 기분, 감정 다른 사람에게 표현 할 수 없나요?
 혼자만 간직하고 싶은게 있나요?
 간단하게 모든 감정을 기록해서 좋았던 감정만 남기고 
@@ -340,7 +342,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ccf-r4-Ch8">
-                                <rect key="frame" x="16" y="209.33333333333331" width="396" height="682.66666666666674"/>
+                                <rect key="frame" x="16" y="202.33333333333331" width="396" height="689.66666666666674"/>
                             </imageView>
                             <pageControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="1GH-4I-Gx0">
                                 <rect key="frame" x="20" y="810" width="388" height="28"/>
@@ -456,7 +458,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRv-vP-aFV">
-                                            <rect key="frame" x="20" y="9.3333333333333339" width="31.333333333333329" height="31.333333333333329"/>
+                                            <rect key="frame" x="20.000000000000004" y="10.333333333333334" width="43.333333333333343" height="29.333333333333329"/>
                                             <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="25"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -534,10 +536,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="u7J-gs-odM">
-                                <rect key="frame" x="16" y="108" width="396" height="220"/>
+                                <rect key="frame" x="16" y="108" width="396" height="400"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="220" id="BHq-IX-Kb9"/>
+                                    <constraint firstAttribute="height" constant="400" id="Eim-OM-jkC"/>
                                 </constraints>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
@@ -578,7 +580,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fxg-sg-gLg">
-                                <rect key="frame" x="16" y="162" width="396" height="220"/>
+                                <rect key="frame" x="16" y="160" width="396" height="220"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="220" id="A55-p9-0O6"/>
                                 </constraints>
@@ -587,7 +589,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oCA-Aa-dOk">
-                                <rect key="frame" x="378" y="402" width="30" height="34"/>
+                                <rect key="frame" x="378" y="400" width="30" height="32"/>
                                 <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="등록">
@@ -598,10 +600,10 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="I8b-rH-Qc8">
-                                <rect key="frame" x="16" y="108" width="396" height="34"/>
+                                <rect key="frame" x="16" y="108" width="396" height="32"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRa-M7-BPl">
-                                        <rect key="frame" x="0.0" y="0.0" width="79.333333333333329" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="79.333333333333329" height="32"/>
                                         <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
                                         <state key="normal" title="우울">
                                             <color key="titleColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -611,7 +613,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K55-kS-Fac">
-                                        <rect key="frame" x="79.333333333333329" y="0.0" width="78.999999999999986" height="34"/>
+                                        <rect key="frame" x="79.333333333333329" y="0.0" width="78.999999999999986" height="32"/>
                                         <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
                                         <state key="normal" title="슬픔">
                                             <color key="titleColor" systemColor="systemPurpleColor"/>
@@ -621,7 +623,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d19-Je-1jE">
-                                        <rect key="frame" x="158.33333333333334" y="0.0" width="79.333333333333343" height="34"/>
+                                        <rect key="frame" x="158.33333333333334" y="0.0" width="79.333333333333343" height="32"/>
                                         <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
                                         <state key="normal" title="보통">
                                             <color key="titleColor" systemColor="labelColor"/>
@@ -631,7 +633,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ceg-gS-AV1">
-                                        <rect key="frame" x="237.66666666666663" y="0.0" width="79" height="34"/>
+                                        <rect key="frame" x="237.66666666666663" y="0.0" width="79" height="32"/>
                                         <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
                                         <state key="normal" title="기쁨">
                                             <color key="titleColor" systemColor="systemGreenColor"/>
@@ -641,7 +643,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVz-st-Nwq">
-                                        <rect key="frame" x="316.66666666666669" y="0.0" width="79.333333333333314" height="34"/>
+                                        <rect key="frame" x="316.66666666666669" y="0.0" width="79.333333333333314" height="32"/>
                                         <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
                                         <state key="normal" title="행복">
                                             <color key="titleColor" red="0.94536799192428589" green="0.15533861517906189" blue="0.11365344375371933" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
