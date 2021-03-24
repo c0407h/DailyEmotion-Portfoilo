@@ -9,6 +9,7 @@ import UIKit
 import SwipeCellKit
 import GoogleMobileAds
 
+
 class EmotionViewController: UIViewController, SwipeCollectionViewCellDelegate, GADBannerViewDelegate{
     
     var bannerView: GADBannerView!

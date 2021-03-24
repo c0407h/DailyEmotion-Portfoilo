@@ -7,6 +7,8 @@
 
 import UIKit
 import GoogleMobileAds
+import AppTrackingTransparency
+import AdSupport
 
 
 
@@ -14,15 +16,32 @@ import GoogleMobileAds
 //@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    func requestIDFA() {
+      ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+        // Tracking authorization completed. Start loading ads here.
+        // loadAd()
+      })
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         GADMobileAds.sharedInstance().start(completionHandler: nil)
-        Thread.sleep(forTimeInterval: 5.0)
+        Thread.sleep(forTimeInterval: 0.2)
         
-        
+        let status = ATTrackingManager.trackingAuthorizationStatus
+        print(status.rawValue)
+        // 최초는 .notDetermined 상태
+        ATTrackingManager.requestTrackingAuthorization { status in switch status {
+        case .authorized: print("성공")
+        case .denied: print("해당 앱 추적 권한 거부 또는 아이폰 설정->개인정보보호->추적 거부 상태")
+        case .notDetermined: print("승인 요청을 받기전 상태 값")
+        case .restricted: print("앱 추적 데이터 사용 권한이 제한된 경우")
+        @unknown default: print("에러 처리..")
+            
+        }
+
+        }
         return true
     }
 

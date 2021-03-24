@@ -115,8 +115,6 @@
 				57404B8925F66593000A5EFF /* Storage.swift */,
 				57404B6F25F64A59000A5EFF /* Assets.xcassets */,
 				57404B7125F64A59000A5EFF /* LaunchScreen.storyboard */,
-				571043D3260799F300190E00 /* appname.png */,
-				57A2D1E0260791CD00DBDA00 /* 1024.png */,
 				57404B7425F64A59000A5EFF /* Info.plist */,
 				579105A42603AC84004CC880 /* infoPagingViewController.swift */,
 			);
@@ -126,10 +124,12 @@
 		579105A22603AC64004CC880 /* infoImage */ = {
 			isa = PBXGroup;
 			children = (
+				57A2D1E0260791CD00DBDA00 /* 1024.png */,
 				579105AA2603ADA1004CC880 /* 01.png */,
 				579105A72603ADA0004CC880 /* 02.png */,
 				579105A82603ADA0004CC880 /* 03.png */,
 				579105A92603ADA1004CC880 /* 04.png */,
+				571043D3260799F300190E00 /* appname.png */,
 			);
 			path = infoImage;
 			sourceTree = "<group>";
@@ -434,10 +434,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9UU59NTC96;
 				INFOPLIST_FILE = DailyEmotion/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.chung.EmotionDiary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -454,10 +456,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9UU59NTC96;
 				INFOPLIST_FILE = DailyEmotion/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.chung.EmotionDiary;

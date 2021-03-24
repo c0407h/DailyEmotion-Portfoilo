@@ -6,7 +6,6 @@
 //
 
 import UIKit
-
 class SettingViewController: UITableViewController {
 
     
@@ -125,11 +124,19 @@ class SettingViewController: UITableViewController {
                 plist.synchronize()
         }
         
-           
+    @IBAction func review(_ sender: UIButton) {
+        let appleID = "1559340944"
+        let url = "https://itunes.apple.com/app/id\(appleID)?action=write-review"
+        print(url)
+        guard let path = URL(string: url) else { return }
+        UIApplication.shared.open(path, options: [:], completionHandler: nil)
+    }
+    
 
     @IBAction func backBtn(_ sender: UIBarButtonItem) {
         _ = navigationController?.popViewController(animated: true)
     }
+
     
     
 }
