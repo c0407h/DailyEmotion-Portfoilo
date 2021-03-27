@@ -19,6 +19,7 @@
 		57404B7C25F65084000A5EFF /* EmotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57404B7B25F65084000A5EFF /* EmotionViewController.swift */; };
 		57404B8725F66589000A5EFF /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57404B8625F66589000A5EFF /* Emotion.swift */; };
 		57404B8A25F66593000A5EFF /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57404B8925F66593000A5EFF /* Storage.swift */; };
+		57557F4F260F09F10006E485 /* CaledarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57557F4E260F09F10006E485 /* CaledarViewController.swift */; };
 		579105A52603AC84004CC880 /* infoPagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579105A42603AC84004CC880 /* infoPagingViewController.swift */; };
 		579105AB2603ADA1004CC880 /* 02.png in Resources */ = {isa = PBXBuildFile; fileRef = 579105A72603ADA0004CC880 /* 02.png */; };
 		579105AC2603ADA1004CC880 /* 03.png in Resources */ = {isa = PBXBuildFile; fileRef = 579105A82603ADA0004CC880 /* 03.png */; };
@@ -46,6 +47,7 @@
 		57404B7B25F65084000A5EFF /* EmotionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionViewController.swift; sourceTree = "<group>"; };
 		57404B8625F66589000A5EFF /* Emotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
 		57404B8925F66593000A5EFF /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		57557F4E260F09F10006E485 /* CaledarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaledarViewController.swift; sourceTree = "<group>"; };
 		579105A42603AC84004CC880 /* infoPagingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = infoPagingViewController.swift; sourceTree = "<group>"; };
 		579105A72603ADA0004CC880 /* 02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 02.png; sourceTree = "<group>"; };
 		579105A82603ADA0004CC880 /* 03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 03.png; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				57404B6625F64A57000A5EFF /* AppDelegate.swift */,
 				57404B6825F64A57000A5EFF /* SceneDelegate.swift */,
 				57404B6C25F64A57000A5EFF /* Main.storyboard */,
+				57557F4E260F09F10006E485 /* CaledarViewController.swift */,
 				5733C02E25FCF7E200DA9110 /* DetailViewController.swift */,
 				57F0139525F7275D0078E44C /* AddViewController.swift */,
 				57404B7B25F65084000A5EFF /* EmotionViewController.swift */,
@@ -276,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57404B7C25F65084000A5EFF /* EmotionViewController.swift in Sources */,
+				57557F4F260F09F10006E485 /* CaledarViewController.swift in Sources */,
 				57404B8725F66589000A5EFF /* Emotion.swift in Sources */,
 				57F0139625F7275D0078E44C /* AddViewController.swift in Sources */,
 				57404B6725F64A57000A5EFF /* AppDelegate.swift in Sources */,

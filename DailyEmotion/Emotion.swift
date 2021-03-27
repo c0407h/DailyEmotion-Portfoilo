@@ -9,7 +9,6 @@ import UIKit
 
 struct Emotion: Codable, Equatable {
     let id: Int
-
     var detail: String
     var isBad: Bool
     var isSad: Bool
@@ -29,12 +28,11 @@ struct Emotion: Codable, Equatable {
         // TODO: 동등 조건 추가
         return lhs.id == rhs.id
     }
-    
-
 }
 
 class EmotionManager {
-    
+    //싱글톤 객체를 만든 것임
+    //하나만 만들고 여러군데에서 사용하게끔 만든것임
     static let shared = EmotionManager()
     
     static var lastId: Int = 0
