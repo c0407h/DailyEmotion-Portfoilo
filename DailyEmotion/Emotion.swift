@@ -70,11 +70,14 @@ class EmotionManager {
     
     func retrieveEmotion() {
         emotions = Storage.retrive("emotions.json", from: .documents, as: [Emotion].self) ?? []
-        
+
         let lastId = emotions.last?.id ?? 0
+        
+   
         EmotionManager.lastId = lastId
     }
 }
+
 
 class EmotionViewModel {
     enum Section: Int, CaseIterable {
@@ -86,7 +89,7 @@ class EmotionViewModel {
             case .today: return "오늘"
             default: return "이전"
             }
-        }
+        }   
     }
     
     
@@ -128,4 +131,86 @@ class EmotionViewModel {
         manager.deleteEmotion(emotion)
     }
  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//caledar 날자 선택시 필요
+class SelectEmotionManager {
+    static let shared = SelectEmotionManager()
+    
+    
+    var selectEmotions: [Emotion] = []
+    
+    func retrieveEmotion() {
+        selectEmotions = Storage.retrive("emotions.json", from: .documents, as: [Emotion].self) ?? []
+        
+        print(selectEmotions.count)
+        
+        var selectEmotionCount = selectEmotions.count
+        
+        
+        let emt = selectEmotions.last as? Emotion
+        
+        let isTodayDate = emt?.isToday
+        
+        print(isTodayDate)
+        
+
+    }
+}
+
+class CalendarViewModel{
+    
+    
+    enum Section: Int, CaseIterable{
+        case selectDate
+        var title: String {
+            switch self {
+            case .selectDate: return "날자를 선택하세요"
+            default: return "no"
+            }
+        }
+    }
+    private let manager = SelectEmotionManager.shared
+    
+    var numOfSection: Int {
+        return Section.allCases.count
+    }
+    
+    func loadTasks() {
+        
+        manager.retrieveEmotion()
+    }
+    
+    
+//    var selectDate: [Emotion] {
+//        let today = Date()
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "yyyy-MM-dd"
+//        let isTodayDate = dateFormatter.string(from: today as Date)
+//
+//        return selectEmotions.filter { $0.isToday ==  isTodayDate }
+//    }
+    
+//    var selectEmotions: [Emotion] {
+//        let today = NSDate()
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "yyyy-MM-dd"
+//        let isTodayDate = dateFormatter.string(from: today as Date)
+//
+//        return emotions.filter { $0.isToday ==  isTodayDate }
+//    }
 }

@@ -11,4 +11,5 @@ target 'DailyEmotion' do
 
 pod 'SwipeCellKit'
 pod 'Google-Mobile-Ads-SDK'
+pod 'FSCalendar'
 end

@@ -36,7 +36,7 @@ class EmotionViewController: UIViewController, SwipeCollectionViewCellDelegate, 
     let emotionListViewModel = EmotionViewModel()
   
     override func viewDidLoad() {
-        
+        emotionListViewModel.loadTasks()
           super.viewDidLoad()
         
         addBtnView.layer.cornerRadius = addBtnView.frame.width / 2
