@@ -9,7 +9,6 @@ import UIKit
 import SwipeCellKit
 import GoogleMobileAds
 
-
 class EmotionViewController: UIViewController, SwipeCollectionViewCellDelegate, GADBannerViewDelegate{
     
     var bannerView: GADBannerView!
@@ -34,8 +33,9 @@ class EmotionViewController: UIViewController, SwipeCollectionViewCellDelegate, 
     @IBOutlet weak var collectionView: UICollectionView!
         
     let emotionListViewModel = EmotionViewModel()
-  
+     
     override func viewDidLoad() {
+        
         emotionListViewModel.loadTasks()
           super.viewDidLoad()
         
@@ -102,6 +102,7 @@ class EmotionViewController: UIViewController, SwipeCollectionViewCellDelegate, 
         collectionView.reloadData()
         
     }
+    
     func addBannerViewToView(_ bannerView: GADBannerView) {
         //오토레이아웃으로 뷰를 설정
         bannerView.translatesAutoresizingMaskIntoConstraints = false
@@ -138,9 +139,13 @@ class EmotionViewController: UIViewController, SwipeCollectionViewCellDelegate, 
         
         var cc = (collectionView.cellForItem(at: indexp![0]) as? EmotionListCell)
         nextViewController.detailViewText = cc?.descriptionLabel.text
-
         
+        
+        let selectDate: String = (cc?.dateLabel.text)!
+
     }
+    
+
     
     //MARK: - GADBannerViewDelegate
     /// Tells the delegate an ad request loaded an ad.
@@ -291,7 +296,6 @@ class EmotionListCell: SwipeCollectionViewCell {
         } else if emotion.isUsually{
             myEmotion.text = "😶"
             descriptionLabel.shadowColor = .systemFill
-            
         } else if emotion.isPleasure{
             myEmotion.text = "😍"
             descriptionLabel.shadowColor = .systemRed
@@ -309,14 +313,13 @@ class EmotionListCell: SwipeCollectionViewCell {
     }
     
 }
-// MARK - SwipeCollectionViewCellDelegate
+// MARK: - SwipeCollectionViewCellDelegate
 extension EmotionListCell: SwipeCollectionViewCellDelegate{
     func collectionView(_ collectionView: UICollectionView, editActionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         guard orientation == .right else { return nil }
 
          let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
          
-            
          }
          // customize the action appearance
          deleteAction.image = UIImage(named: "delete")

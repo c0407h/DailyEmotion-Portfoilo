@@ -29,6 +29,7 @@
 		57D2D91026011C0F00116990 /* Kyobo Handwriting 2019.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57D2D90F26011C0000116990 /* Kyobo Handwriting 2019.otf */; };
 		57D2D91226011C1100116990 /* MapoFlowerIsland.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57D2D90E26011C0000116990 /* MapoFlowerIsland.otf */; };
 		57D2D91426011C1400116990 /* TmoneyRoundWindExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57D2D90D26011C0000116990 /* TmoneyRoundWindExtraBold.otf */; };
+		57DFFB8F2616FF6200C38426 /* CalendarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DFFB8E2616FF6200C38426 /* CalendarDetailViewController.swift */; };
 		57F0139625F7275D0078E44C /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F0139525F7275D0078E44C /* AddViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		57D2D90D26011C0000116990 /* TmoneyRoundWindExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TmoneyRoundWindExtraBold.otf; sourceTree = "<group>"; };
 		57D2D90E26011C0000116990 /* MapoFlowerIsland.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MapoFlowerIsland.otf; sourceTree = "<group>"; };
 		57D2D90F26011C0000116990 /* Kyobo Handwriting 2019.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kyobo Handwriting 2019.otf"; sourceTree = "<group>"; };
+		57DFFB8E2616FF6200C38426 /* CalendarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailViewController.swift; sourceTree = "<group>"; };
 		57F0139525F7275D0078E44C /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		72C4B49B0233C68D4340DB35 /* Pods-DailyEmotion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyEmotion.debug.xcconfig"; path = "Target Support Files/Pods-DailyEmotion/Pods-DailyEmotion.debug.xcconfig"; sourceTree = "<group>"; };
 		EAC6C1EC10B1D329D287B8C0 /* Pods_DailyEmotion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyEmotion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +118,7 @@
 				57404B8625F66589000A5EFF /* Emotion.swift */,
 				5733C02B25FCDD6600DA9110 /* SettingViewController.swift */,
 				57404B8925F66593000A5EFF /* Storage.swift */,
+				57DFFB8E2616FF6200C38426 /* CalendarDetailViewController.swift */,
 				57404B6F25F64A59000A5EFF /* Assets.xcassets */,
 				57404B7125F64A59000A5EFF /* LaunchScreen.storyboard */,
 				57404B7425F64A59000A5EFF /* Info.plist */,
@@ -283,6 +286,7 @@
 				57404B8725F66589000A5EFF /* Emotion.swift in Sources */,
 				57F0139625F7275D0078E44C /* AddViewController.swift in Sources */,
 				57404B6725F64A57000A5EFF /* AppDelegate.swift in Sources */,
+				57DFFB8F2616FF6200C38426 /* CalendarDetailViewController.swift in Sources */,
 				57404B6925F64A57000A5EFF /* SceneDelegate.swift in Sources */,
 				5733C02C25FCDD6600DA9110 /* SettingViewController.swift in Sources */,
 				57404B8A25F66593000A5EFF /* Storage.swift in Sources */,

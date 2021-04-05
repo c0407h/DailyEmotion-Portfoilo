@@ -8,35 +8,59 @@
 import UIKit
 import FSCalendar
 
-
-class CaledarViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource {
+class CaledarViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource, UICollectionViewDelegate {
     
-    @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet var calendar: FSCalendar!
     
-    let selectListViewModel = CalendarViewModel()
-    
+    let selectListViewModel = EmotionViewModel()
+    var ddd: [Emotion] = []
     var header : calendarHeader!
     
-    
     override func viewDidLoad() {
+        
+        ddd = selectListViewModel.todayEmotions
+            
+        selectListViewModel.loadTasks()
+        
         super.viewDidLoad()
-         
+        collectionView.delegate = self
         
         calendarView()
         self.view.addSubview(calendar)
         
         calendar.calendarWeekdayView.weekdayLabels[0].textColor = UIColor.red
         calendar.calendarWeekdayView.weekdayLabels[6].textColor = UIColor.blue
-        
+
         calendar.delegate = self
         calendar.dataSource = self
-
         
-        
-
-        // Do any additional setup after loading the view.
     }
+    override func viewDidAppear(_ animated: Bool) {
+        
+        collectionView.reloadData()
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let nextViewController = segue.destination as? CalendarDetailViewController else {
+            return
+        }
+
+
+        guard let indexp: [IndexPath]? = collectionView.indexPathsForSelectedItems else {
+            
+            return
+        }
+        
+        //디테일 페이지로 글 넘겨주는 것.
+        var cc = (collectionView.cellForItem(at: indexp![0]) as? CalendarListCell)
+        nextViewController.calendarDetailText = cc?.DescriptionLabel.text
+
+    }
+
+
+    
     //MARK: - Delegate
 //    public func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition){
 //        let dateFormatter = DateFormatter()
@@ -48,17 +72,30 @@ class CaledarViewController: UIViewController, FSCalendarDelegate, FSCalendarDat
     // 날짜 선택 시 콜백 메소드
     // 날짜 선택 클릭 이벤트
     public func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        //View화면에서 섹션헤더부분 날자 포멧
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM월 dd일"
         
+        //선택 날자에 따른 data를 가져오기 위한 날자 포멧
         let dateFormatterCompare = DateFormatter()
         dateFormatterCompare.dateFormat = "yyyy-MM-dd"
         
-        
+        print(dateFormatterCompare.string(from: date))
         print(dateFormatter.string(from: date))
+
         header.calendarSelectDate.text = dateFormatter.string(from: date)
         
+//        let ccc = selectListViewModel.emotions.filter { $0.isToday == dateFormatterCompare.string(from: date) }
         
+        ddd = selectListViewModel.selectDateEmotions(dateFormatterCompare.string(from: date))
+        
+        for dd in ddd {
+            print(dd.id)
+            print(dd.detail)
+            print(dd.isToday)
+        }
+        
+        self.collectionView.reloadData()
     }
 
     
@@ -68,7 +105,7 @@ class CaledarViewController: UIViewController, FSCalendarDelegate, FSCalendarDat
         calendar.appearance.todayColor = .systemRed
         calendar.appearance.titleTodayColor = .label
         calendar.appearance.headerDateFormat = "YYYY년 MM월"
-
+        
         calendar.appearance.headerTitleFont = UIFont(name: "Kyobo Handwriting 2019", size: 17)
         calendar.appearance.weekdayFont = UIFont(name: "Kyobo Handwriting 2019", size: 17)
         calendar.appearance.titleFont = UIFont(name: "Kyobo Handwriting 2019", size: 12)
@@ -76,8 +113,6 @@ class CaledarViewController: UIViewController, FSCalendarDelegate, FSCalendarDat
         
     }
  
-
-    
     
     /*
     // MARK: - Navigation
@@ -88,30 +123,44 @@ class CaledarViewController: UIViewController, FSCalendarDelegate, FSCalendarDat
         // Pass the selected object to the new view controller.
     }
     */
+    
+    //뒤로가기
     @IBAction func backBtn(_ sender: UIBarButtonItem) {
         _ = navigationController?.popViewController(animated: true)
     }
-    
-    
-
 }
+
 
 extension CaledarViewController: UICollectionViewDataSource{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return selectListViewModel.numOfSection
+        return selectListViewModel.numOfSelectSection
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return 1
+        if section == 0 {
+            return ddd.count
+        }else{
+            return 0
+        }
     }
     
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarListCell", for: indexPath) as? CalendarListCell else {
             return UICollectionViewCell()
         }
-        return cell
+         
+        var emotion: Emotion
+       
+        if indexPath.section == 0 {
             
+            emotion = ddd [indexPath.item] 
+
+        } else {
+            emotion = selectListViewModel.beforeEmotions [indexPath.item]
+        }
+        cell.updateUI(selectDate: emotion)
+        
         return cell
         
     }
@@ -121,14 +170,14 @@ extension CaledarViewController: UICollectionViewDataSource{
         case UICollectionView.elementKindSectionHeader:
             header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "calendarHeader", for: indexPath) as? calendarHeader
             
-            guard let section = CalendarViewModel.Section(rawValue: indexPath.section) else {
+            guard let section = EmotionViewModel.Section(rawValue: indexPath.section) else {
                 return UICollectionReusableView()
             }
+            
+            
             var today = NSDate()
             let dateFormatterToday = DateFormatter()
             dateFormatterToday.dateFormat = "MM월 dd일"
-            
-            
             header.calendarSelectDate.text = dateFormatterToday.string(from: today as Date)
             
 
@@ -138,10 +187,12 @@ extension CaledarViewController: UICollectionViewDataSource{
         }
     }
     
-    
 }
+
+
+
 // 컬렉션뷰 사이즈 레이아웃
-extension CaledarViewController: UICollectionViewDelegateFlowLayout {
+extension CaledarViewController:  UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width: CGFloat = collectionView.bounds.width
         let height: CGFloat = 70
@@ -149,24 +200,49 @@ extension CaledarViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+
+
 class CalendarListCell: UICollectionViewCell{
     @IBOutlet var DescriptionLabel: UILabel!
     @IBOutlet var myEmotion: UILabel!
     
+    var header : calendarHeader!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        reset()
+
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        reset()
+
     }
-    func reset() {
-        // TODO: reset로직 구현
+    
+    func updateUI(selectDate: Emotion){
+        DescriptionLabel.text = selectDate.detail
         
+        
+        if selectDate.isSad {
+            myEmotion.text = "😥"
+            DescriptionLabel.shadowColor = .systemPurple
+        } else if selectDate.isBad{
+            myEmotion.text = "😔"
+            DescriptionLabel.shadowColor = .systemBlue
+        } else if selectDate.isUsually{
+            myEmotion.text = "😶"
+            DescriptionLabel.shadowColor = .systemFill
+        } else if selectDate.isPleasure{
+            myEmotion.text = "😍"
+            DescriptionLabel.shadowColor = .systemRed
+        } else if selectDate.isHappy{
+            myEmotion.text = "😁"
+            DescriptionLabel.shadowColor = .systemGreen
+        }else {
+            myEmotion.text = "😶"
+            DescriptionLabel.shadowColor = .systemFill
+        }
     }
+    
 }
 
 class calendarHeader: UICollectionReusableView {

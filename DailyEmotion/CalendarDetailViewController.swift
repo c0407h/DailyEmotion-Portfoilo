@@ -1,30 +1,29 @@
 //
-//  DetailViewController.swift
+//  CalendarDetailViewController.swift
 //  DailyEmotion
 //
-//  Created by 이충현 on 2021/03/13.
+//  Created by 이충현 on 2021/04/02.
 //
 
 import UIKit
-class DetailViewController: UIViewController {
 
-    
-    @IBOutlet var detailTextView: UITextView!
-    var detailViewText: String?
+class CalendarDetailViewController: UIViewController {
+
+    @IBOutlet var calendarDetail: UITextView!
+    var calendarDetailText: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        calendarDetail.layer.borderWidth = 1.0
+        calendarDetail.layer.borderColor = UIColor.systemFill.cgColor
+        calendarDetail.layer.cornerRadius = 10
+        calendarDetail.isEditable = false
+        
+        calendarDetail.text = calendarDetailText
 
-        
-        detailTextView.layer.borderWidth = 1.0
-        detailTextView.layer.borderColor = UIColor.systemFill.cgColor
-        detailTextView.layer.cornerRadius = 10
-        detailTextView.isEditable = false
-        
-        detailTextView.text = detailViewText
-        
-        print(detailViewText)
-        
+        // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
         
@@ -34,7 +33,6 @@ class DetailViewController: UIViewController {
     @IBAction func backBtn(_ sender: UIBarButtonItem) {
         _ = navigationController?.popViewController(animated: true)
     }
-    
     /*
     // MARK: - Navigation
 
