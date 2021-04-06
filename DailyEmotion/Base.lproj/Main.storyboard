@@ -181,7 +181,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="K9d-dr-aml" kind="show" id="esA-V1-PzY"/>
+                                            <segue destination="K9d-dr-aml" kind="presentation" id="esA-V1-PzY"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Vb3-lp-2ae">
@@ -357,11 +357,11 @@
             <objects>
                 <viewController id="K9d-dr-aml" customClass="infoPagingViewController" customModule="DailyEmotion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Pf-CC-Me8">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqJ-Xl-5Ae">
-                                <rect key="frame" x="20" y="103" width="388" height="106.33333333333331"/>
+                                <rect key="frame" x="20" y="15" width="388" height="106.33333333333331"/>
                                 <string key="text">내 기분, 감정 다른 사람에게 표현 할 수 없나요?
 혼자만 간직하고 싶은게 있나요?
 간단하게 모든 감정을 기록해서 좋았던 감정만 남기고 
@@ -371,7 +371,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ccf-r4-Ch8">
-                                <rect key="frame" x="16" y="209.33333333333331" width="396" height="682.66666666666674"/>
+                                <rect key="frame" x="16" y="121.33333333333331" width="396" height="716.66666666666674"/>
                             </imageView>
                             <pageControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="1GH-4I-Gx0">
                                 <rect key="frame" x="20" y="810" width="388" height="28"/>

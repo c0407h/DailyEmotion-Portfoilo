@@ -89,7 +89,6 @@ class EmotionViewController: UIViewController, SwipeCollectionViewCellDelegate, 
         addBannerViewToView(bannerView)
         //광고단위 아이디
         bannerView.adUnitID = "ca-app-pub-1400043170071998/2257879909"
-
         bannerView.rootViewController = self
         //광고로드
         bannerView.load(GADRequest())

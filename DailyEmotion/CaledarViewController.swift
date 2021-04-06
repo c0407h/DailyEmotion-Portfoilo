@@ -3,12 +3,11 @@
 //  DailyEmotion
 //
 //  Created by 이충현 on 2021/03/27.
-//
 
 import UIKit
 import FSCalendar
 
-class CaledarViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource, UICollectionViewDelegate {
+class CaledarViewController: UIViewController, FSCalendarDelegate, UICollectionViewDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet var calendar: FSCalendar!
@@ -18,10 +17,11 @@ class CaledarViewController: UIViewController, FSCalendarDelegate, FSCalendarDat
     var header : calendarHeader!
     
     override func viewDidLoad() {
-        
-        ddd = selectListViewModel.todayEmotions
-            
-        selectListViewModel.loadTasks()
+    
+//        ddd = selectListViewModel.todayEmotions
+//
+//        selectListViewModel.loadTasks()
+     
         
         super.viewDidLoad()
         collectionView.delegate = self
@@ -46,10 +46,8 @@ class CaledarViewController: UIViewController, FSCalendarDelegate, FSCalendarDat
         guard let nextViewController = segue.destination as? CalendarDetailViewController else {
             return
         }
-
-
+        
         guard let indexp: [IndexPath]? = collectionView.indexPathsForSelectedItems else {
-            
             return
         }
         
@@ -59,8 +57,6 @@ class CaledarViewController: UIViewController, FSCalendarDelegate, FSCalendarDat
 
     }
 
-
-    
     //MARK: - Delegate
 //    public func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition){
 //        let dateFormatter = DateFormatter()
@@ -92,12 +88,15 @@ class CaledarViewController: UIViewController, FSCalendarDelegate, FSCalendarDat
         for dd in ddd {
             print(dd.id)
             print(dd.detail)
-            print(dd.isToday)
         }
         
+        
+        
         self.collectionView.reloadData()
+        
     }
 
+  
     
     func calendarView() {
         calendar.scrollDirection = .vertical
@@ -111,6 +110,8 @@ class CaledarViewController: UIViewController, FSCalendarDelegate, FSCalendarDat
         calendar.appearance.titleFont = UIFont(name: "Kyobo Handwriting 2019", size: 12)
         calendar.allowsMultipleSelection = false
         
+        calendar.appearance.eventDefaultColor = UIColor.red
+            
     }
  
     
@@ -129,7 +130,31 @@ class CaledarViewController: UIViewController, FSCalendarDelegate, FSCalendarDat
         _ = navigationController?.popViewController(animated: true)
     }
 }
-
+extension CaledarViewController: FSCalendarDataSource{
+    //캘린더 날자별 글 등록시 해당 날자 밑 도트 추가
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+        // json에 있는 데이터 중 isToday 인 날자들을 집어 넣기 위해 빈배열 생성
+        var alldate: Set<String> = []
+        //selectListViewModel.emotions json에 저장된것들을 모두 가져옴
+        let aaa = selectListViewModel.emotions
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        // string으로 되어있는 포멧을 date 포멧으로 변경
+        let isTodayDate = dateFormatter.string(from: date)
+        
+        
+        for aa in aaa {
+            alldate.insert(aa.isToday)
+        }
+        
+        if alldate.contains(isTodayDate){
+            return 1
+        }
+        
+        return 0
+    }
+}
 
 extension CaledarViewController: UICollectionViewDataSource{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -143,7 +168,6 @@ extension CaledarViewController: UICollectionViewDataSource{
             return 0
         }
     }
-    
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarListCell", for: indexPath) as? CalendarListCell else {
@@ -153,16 +177,13 @@ extension CaledarViewController: UICollectionViewDataSource{
         var emotion: Emotion
        
         if indexPath.section == 0 {
-            
-            emotion = ddd [indexPath.item] 
-
+            emotion = ddd [indexPath.item]
         } else {
             emotion = selectListViewModel.beforeEmotions [indexPath.item]
         }
         cell.updateUI(selectDate: emotion)
         
         return cell
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -174,22 +195,17 @@ extension CaledarViewController: UICollectionViewDataSource{
                 return UICollectionReusableView()
             }
             
-            
             var today = NSDate()
             let dateFormatterToday = DateFormatter()
             dateFormatterToday.dateFormat = "MM월 dd일"
             header.calendarSelectDate.text = dateFormatterToday.string(from: today as Date)
             
-
             return header
         default:
             return UICollectionReusableView()
         }
     }
-    
 }
-
-
 
 // 컬렉션뷰 사이즈 레이아웃
 extension CaledarViewController:  UICollectionViewDelegateFlowLayout {
@@ -200,8 +216,6 @@ extension CaledarViewController:  UICollectionViewDelegateFlowLayout {
     }
 }
 
-
-
 class CalendarListCell: UICollectionViewCell{
     @IBOutlet var DescriptionLabel: UILabel!
     @IBOutlet var myEmotion: UILabel!
@@ -210,17 +224,14 @@ class CalendarListCell: UICollectionViewCell{
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
-
     }
-    
+   
     func updateUI(selectDate: Emotion){
         DescriptionLabel.text = selectDate.detail
-        
         
         if selectDate.isSad {
             myEmotion.text = "😥"
@@ -242,7 +253,6 @@ class CalendarListCell: UICollectionViewCell{
             DescriptionLabel.shadowColor = .systemFill
         }
     }
-    
 }
 
 class calendarHeader: UICollectionReusableView {

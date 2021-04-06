@@ -26,19 +26,20 @@ struct Emotion: Codable, Equatable {
     static func == (lhs: Self, rhs: Self) -> Bool {
         // TODO: 동등 조건 추가
         return lhs.id == rhs.id
+        
     }
 }
 
 class EmotionManager {
- 
     //싱글톤 객체를 만든 것임
     //하나만 만들고 여러군데에서 사용하게끔 만든것임
     static let shared = EmotionManager()
-    
+     
     //새로 등록 될때마다 id 번호를 업데이트 시키기위해 사용하는 것
     static var lastId: Int = 0
     
     var emotions: [Emotion] = []
+
 
     
     func createEmotion(detail: String, isBad: Bool, isSad: Bool, isUsually: Bool, isPleasure: Bool, isHappy: Bool, isToday: String) -> Emotion {
@@ -50,11 +51,14 @@ class EmotionManager {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let isTodayDate = dateFormatter.string(from: today as Date)
-                
+        
+        
+        
         return Emotion(id: nextId, detail: detail, isBad: isBad, isSad: isSad, isUsually: isUsually, isPleasure: isPleasure, isHappy: isHappy, isToday: isTodayDate)
     }
     
     func addEmotion(_ emotion: Emotion) {
+        
         emotions.append(emotion)
         saveEmotion()
     }
@@ -70,17 +74,14 @@ class EmotionManager {
     
     func retrieveEmotion() {
         emotions = Storage.retrive("emotions.json", from: .documents, as: [Emotion].self) ?? []
-        print("불러올때 쓰는 거 : \(emotions)")
-        
-      
-        
+        print("불러올때 쓰는 거 : \(emotions)")      
         
         let lastId = emotions.last?.id ?? 0
         
         EmotionManager.lastId = lastId
     }
-
-
+    
+  
 }
 
 
@@ -96,6 +97,7 @@ class EmotionViewModel {
             }
         }   
     }
+    
     enum selectSection: Int, CaseIterable{
         case selectDate
         var title: String {
@@ -106,12 +108,12 @@ class EmotionViewModel {
         }
     }
     
-    
     private let manager = EmotionManager.shared
     
     var emotions: [Emotion] {
         return manager.emotions.reversed()
     }
+    
     
     var todayEmotions: [Emotion] {
         let today = NSDate()
@@ -121,6 +123,7 @@ class EmotionViewModel {
         
         return emotions.filter { $0.isToday ==  isTodayDate }
     }
+    
     var beforeEmotions: [Emotion] {
         let today = NSDate()
         let dateFormatter = DateFormatter()
@@ -129,7 +132,8 @@ class EmotionViewModel {
         
         return emotions.filter { $0.isToday !=  isTodayDate }
     }
-
+    
+    
     func selectDateEmotions(_ selectedDate: String) -> [Emotion] {
         return emotions.filter { $0.isToday == selectedDate }
     }
@@ -141,18 +145,17 @@ class EmotionViewModel {
     var numOfSection: Int {
         return Section.allCases.count
     }
+    
     var numOfSelectSection: Int {
         return selectSection.allCases.count
     }
     
     func loadTasks() {
-        
         manager.retrieveEmotion()
     }
+    
     func deleteEmotion(_ emotion: Emotion){
         manager.deleteEmotion(emotion)
     }
- 
+    
 }
-
-
